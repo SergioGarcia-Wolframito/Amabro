@@ -3,6 +3,8 @@ public class Product {
 
 	int price;
 	String NombreProducto;
+	
+	
 
 	public int getPrice() {
 		return price;
@@ -26,6 +28,13 @@ public class Product {
 
 	public void setNombreProducto(String nombreProducto) {
 		NombreProducto = nombreProducto;
+	}
+	
+	double dolar(double x) {
+		
+		x = x + 1.15;
+		
+		return x;
 	}
 		
 }

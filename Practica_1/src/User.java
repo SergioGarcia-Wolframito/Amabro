@@ -33,6 +33,10 @@ public class User {
 		name = Name;
 		email = Email;
 		password = Password;
+		
 	}
-
+	
+	
+	
+	
 }
