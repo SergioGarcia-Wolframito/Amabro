@@ -5,7 +5,6 @@ public class Product {
 	String NombreProducto;
 	
 	
-
 	public int getPrice() {
 		return price;
 	}
