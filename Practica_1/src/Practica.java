@@ -4,11 +4,9 @@ import java.util.Properties;
 
 public class Practica {
 	
-	
-	static String usuario;
-	static String mail;
-	static String contra;
-	
+	static String usuario = "";
+	static String mail = "";
+	static String contra =  "";
 	
 	void start() {
 
@@ -25,6 +23,7 @@ public class Practica {
 		Scanner se = new Scanner(System.in);
 		System.out.println("Introduce a password:");
 		contra = se.nextLine();
+		
 		User Usuario = new User(usuario, mail, contra);
 		
 	}
@@ -32,7 +31,6 @@ public class Practica {
 	void menu() {
 		
 		int number_menu = 0;
-		
 		while(number_menu != 7) {
 			
 			Scanner nm = new Scanner(System.in);
@@ -69,7 +67,7 @@ public class Practica {
 				String n_user = "";
 				System.out.println("Introcude the new user name: ");
 				n_user = sf.nextLine();
-				//n_user = usuario;
+				n_user = usuario;
 				user1.setName(n_user);
 				
 				break;
@@ -170,11 +168,11 @@ public class Practica {
 	       }
 		
 		Product producto = new Product(0, "Jony");
-		/*System.out.println(producto.getNombreProducto());
+		System.out.println(producto.getNameProduct());
 		
-		producto.setNombreProducto("Hola");
-		System.out.println(producto.getNombreProducto());
-		*/
+		producto.setNameProduct("Hola");
+		System.out.println(producto.getNameProduct());
+		
 		Practica pract = new Practica();
 		pract.start();
 		System.out.println("");

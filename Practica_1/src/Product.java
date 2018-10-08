@@ -2,8 +2,7 @@
 public class Product {
 
 	int price;
-	String NombreProducto;
-	
+	String NameProduct;
 	
 	public int getPrice() {
 		return price;
@@ -14,19 +13,19 @@ public class Product {
 	}
 
 	
-	protected Product(int Price,String nombreproducto) {
+	protected Product(int Price,String nameproduct) {
 		
 		price = Price;
-		NombreProducto = nombreproducto;
+		NameProduct = nameproduct;
 		
 	}
 
-	public String getNombreProducto() {
-		return NombreProducto;
+	public String getNameProduct() {
+		return NameProduct;
 	}
 
-	public void setNombreProducto(String nombreProducto) {
-		NombreProducto = nombreProducto;
+	public void setNameProduct(String nameproduct) {
+		NameProduct = nameproduct;
 	}
 	
 	double dolar(double x) {
