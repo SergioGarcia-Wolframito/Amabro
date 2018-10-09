@@ -1,23 +1,22 @@
 
 public class Product extends Category{
 
-	int price;
+	float price;
 	String NameProduct;
 	
-	public int getPrice() {
+	protected Product(float Price,String nameproduct,String NC, String SC, String IC) {
+		super(NC,SC,IC);
+		price = Price;
+		NameProduct = nameproduct;
+		
+	}
+	
+	public float getPrice() {
 		return price;
 	}
 
 	public void setPrice(int price) {
 		this.price = price;
-	}
-
-	
-	protected Product(int Price,String nameproduct,String NC, String SC, String IC) {
-		super(NC,SC,IC);
-		price = Price;
-		NameProduct = nameproduct;
-		
 	}
 
 	public String getNameProduct() {

@@ -1,17 +1,29 @@
 
 public class Books extends Product{
 
-	protected Books(int Price, String nameproduct) {
-		super(Price, nameproduct, nameproduct, nameproduct, nameproduct);
+	
+	
+	protected String BookWritter = "";
+	protected String Brand = "";
+	protected int Page_Number = 0;
+	protected String ISBN = "";
+	
+	protected Books(float Price,String nameproduct,String NC, String SC, String IC, String BW, String B, int PN, String isbn) {
+		
+		super(Price, nameproduct, "", "", "");
+		BookWritter = BW;
+		Brand = B;
+		Page_Number = PN;
+		ISBN = isbn;
+		
 		// TODO Auto-generated constructor stub
 	}
-	String BookWritter = "";
-
 	
 	public String getBookWritter() {
 			
 		return BookWritter;
 	}
+	
 	public void setBookWritter(String BWritter) {
 		
 		this.BookWritter = BWritter;	
