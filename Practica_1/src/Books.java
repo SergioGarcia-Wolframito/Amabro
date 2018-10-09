@@ -2,7 +2,7 @@
 public class Books extends Product{
 
 	protected Books(int Price, String nameproduct) {
-		super(Price, nameproduct);
+		super(Price, nameproduct, nameproduct, nameproduct, nameproduct);
 		// TODO Auto-generated constructor stub
 	}
 	String BookWritter = "";

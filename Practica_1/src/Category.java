@@ -1,9 +1,22 @@
 
 public class Category {
+	
+	String NameCategory = "";
+	String SubCategory = "";
+	String IdCategory = "";
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	
+	
+	protected Category(String NC, String SC, String IC) {
+		
+		NameCategory = NC;
+		SubCategory = SC;
+		IdCategory = IC;
+	
 	}
+	 
+	
+	
 
 }

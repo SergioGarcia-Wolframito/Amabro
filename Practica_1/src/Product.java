@@ -1,5 +1,5 @@
 
-public class Product {
+public class Product extends Category{
 
 	int price;
 	String NameProduct;
@@ -13,8 +13,8 @@ public class Product {
 	}
 
 	
-	protected Product(int Price,String nameproduct) {
-		
+	protected Product(int Price,String nameproduct,String NC, String SC, String IC) {
+		super(NC,SC,IC);
 		price = Price;
 		NameProduct = nameproduct;
 		

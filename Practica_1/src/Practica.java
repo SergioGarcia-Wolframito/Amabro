@@ -7,13 +7,16 @@ public class Practica {
 	static String usuario = "";
 	static String mail = "";
 	static String contra =  "";
+	static String proof = "";
 	
 	void start() {
 
+		boolean passwor = false;	
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Welcome to the manage of Amabro.");
-		System.out.println("To create an user is necessary to introduce user name, password and e-mail.");
+		System.out.println("To create an user is necessary to introduce an e-mail, an user name and a password.");
 		System.out.println("");
 		System.out.println("Introduce an email:");
 		mail = sc.nextLine();
@@ -21,10 +24,22 @@ public class Practica {
 		System.out.println("Introduce an user name:");
 		usuario = sd.nextLine();
 		Scanner se = new Scanner(System.in);
-		System.out.println("Introduce a password:");
-		contra = se.nextLine();
 		
-		User Usuario = new User(usuario, mail, contra);
+		while(!passwor) {
+		
+		System.out.println("Introduce a password: ");
+		contra = se.nextLine();
+		Scanner st = new Scanner(System.in);
+		System.out.println("Introduce the password again: ");
+		proof = st.nextLine();
+		
+		if(contra.equals(proof)) {
+			passwor = true;
+			User Usuario = new User(usuario, mail, contra);
+			break;
+		}
+		
+		}
 		
 	}
 	
@@ -34,11 +49,12 @@ public class Practica {
 		while(number_menu != 7) {
 			
 			Scanner nm = new Scanner(System.in);
-			System.out.println("1 .Account settings: ");
-			System.out.println("2. Account info");
-			System.out.println("Introduce the number 7 to go back : ");
+			System.out.println("1 .Account settings. ");
+			System.out.println("2. Account info.");
+			System.out.println("3.Open categories file.");
+			System.out.println("Introduce the number 7 to go back . ");
 			
-			System.out.println("Introduce the number of the option: ");
+			System.out.println("Introduce the number of the option. ");
 			number_menu = nm.nextInt();
 			
 		switch(number_menu) {
@@ -148,7 +164,7 @@ public class Practica {
 
 	public static void main(String[] args) {
 		
-		try(FileReader reader =  new FileReader("config")) {
+		try(FileReader reader =  new FileReader("config1//config")) {
 	        Properties properties = new Properties();
 	        properties.load(reader);
 	       
@@ -167,7 +183,8 @@ public class Practica {
 	       
 	       }
 		
-		Product producto = new Product(0, "Jony");
+		
+		Product producto = new Product(0, "Jony", null, null, null);
 		System.out.println(producto.getNameProduct());
 		
 		producto.setNameProduct("Hola");

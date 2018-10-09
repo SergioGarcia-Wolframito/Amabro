@@ -2,7 +2,7 @@
 public class ProductList extends Product{
 
 	protected ProductList(int Price,String nameproduct) {
-		super(Price,nameproduct);
+		super(Price,nameproduct, nameproduct, nameproduct, nameproduct);
 		// TODO Auto-generated constructor stub
 	}
 
