@@ -11,12 +11,39 @@ public class Product extends Category{
 		
 	}
 	
+	
+	public String getNameCategory() {
+		return NameCategory;
+	}
+
+	public void setNameCategory(String namecategory) {
+		this.NameCategory = namecategory;
+	}
+	
+	public String getSubCategory() {
+		return SubCategory;
+	}
+
+	public void setSubCategory(String subcategory) {
+		this.SubCategory = subcategory;
+	}
+	public String getIdCategory() {
+		return IdCategory;
+	}
+
+	public void setIdCategory(String idcategory) {
+		this.IdCategory = idcategory;
+	}
+	
+	
+	
 	public float getPrice() {
 		return price;
 	}
+	
 
-	public void setPrice(int price) {
-		this.price = price;
+	public void setPrice(float pr_pri_ce) {
+		this.price = pr_pri_ce;
 	}
 
 	public String getNameProduct() {
@@ -27,9 +54,11 @@ public class Product extends Category{
 		NameProduct = nameproduct;
 	}
 	
+	
+	
 	double dolar(double x) {
 		
-		x = x + 1.15;
+		x = x * 1.15;
 		
 		return x;
 	}
