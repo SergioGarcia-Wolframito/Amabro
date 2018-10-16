@@ -22,6 +22,32 @@ public class Practica {
 	static String ISBN = "";
 	static float book_price = 0;
 	
+	
+	static String mal; 
+    static String na ;
+    static String pass;
+	
+    static int origin;
+    
+    
+    void Administrator() {
+    	
+    	
+    	
+    	
+    	
+    	
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
 	void start() {
 		
 		
@@ -492,16 +518,23 @@ public class Practica {
 	        Properties properties = new Properties();
 	        properties.load(reader);
 	       
-	        String email = properties.getProperty("email");
-	        String username = properties.getProperty("username");
-	        String password = properties.getProperty("password");
+	       String email = properties.getProperty("email");
+	       String username = properties.getProperty("username");
+	       String password = properties.getProperty("password");
+	       
 	        
+	        
+	        mal = email;
+	        na = username;
+	        pass = password;
+	        
+	       
 	        /*
-	        
-	        System.o =out.println(email);
+	        System.out.println(email);
 	        System.out.println(username);
 	        System.out.println(password);
 	        
+	        System.out.println("Hola");
 	        */
 	        
 	       }catch (Exception e) {;
@@ -510,26 +543,67 @@ public class Practica {
 	       
 	       }
 		
-		
-		/*Product producto = new Product(0, "Jony", null, null, null);
-		System.out.println(producto.getNameProduct());
-		*/
-		
-		/*producto.setNameProduct("Hola");
-		System.out.println(producto.getNameProduct());
-		*/
-		
 		Practica pract = new Practica();
-		pract.start();
-		System.out.println("");
-		pract.menu();
+		
+		Scanner a = new Scanner(System.in);
 		
 		
 		
+		while(origin!=3){
+			
+		System.out.println("User or Administrator.");
+		System.out.println("1.User");
+		System.out.println("2.Administrator");
+		System.out.println("3.Go out");
+		origin = a.nextInt();
 		
+		if(origin == 1) {
+			
+			pract.start();
+			System.out.println("");
+			pract.menu();
+			
+		}
 		
-		//System.out.println(producto.dolar(15));
+		if(origin == 2) {
+			
+			
+			 
+	        Scanner p1 = new Scanner(System.in);
+	        Scanner p2 = new Scanner(System.in);
+	        Scanner p3 = new Scanner(System.in);
+	        
+	        String email,username,password;
+			
+			 System.out.println("Introduce an email : ");
+		        email = p1.nextLine();
+		        System.out.println("Introduce an user name : ");
+		        username = p2.nextLine();
+		        System.out.println("Introduce a password : ");
+		        password = p3.nextLine();
+		        
+		        
+		        if(mal.equals(email)&&(na.equals(username))&&(pass.equals(password))) {
+		        	
+		        	
+		        	System.out.println("Hola");
+		        	
+		        	
+		        	
+		        	
+		        }else {
+		        	
+		        	
+		        	origin = 3;
+		        	
+		        }	
+		}
+		else {	
+			break;
+		}
+		}
 		
+		System.out.println("Goodbye");
 		
 	}
 
