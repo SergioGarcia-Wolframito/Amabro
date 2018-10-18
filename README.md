@@ -1,5 +1,2 @@
 # Practica1
-
-Notas a mi mismo:
-
-Problemas con el constructor.
+He creado otro proyecto con la intención de hacer el proyecto pero con dos listas, una para productos y otra para categoria.
