@@ -55,7 +55,7 @@ public class Product extends Category{
 	
 	
 	
-	double dolar(double x) {
+	static double dolar(double x) {
 		
 		x = x * 1.15;
 		
