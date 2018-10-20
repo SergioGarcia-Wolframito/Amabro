@@ -14,7 +14,9 @@ public class Main {
 	
 	static List <Category> list1Category = new ArrayList <Category>();
 	static List <Product> list1Product = new ArrayList<Product>();
-    
+	
+	
+
     
     void Administrator() {
     	
@@ -27,7 +29,7 @@ public class Main {
     	
     	System.out.println("Welcome to the admin menu.");
     	System.out.println("1. Manage products");
-    	System.out.println("2. Manage category");
+    	System.out.println("2. Manage categories and sub categories");
     	System.out.println("3. Exit");  
     	
     	Admin_menu = am.nextInt();
@@ -37,18 +39,20 @@ public class Main {
     		Scanner ef = new Scanner(System.in);
     		int product_menu2 = 0;
     		
-    		while(product_menu2 !=3) {
+    		while(product_menu2 !=4) {
     			
     			System.out.println("Welcome to the manage product menu.");
         		System.out.println("1. View all the products");
         		System.out.println("2. Add product");
-        		System.out.println("3. Exit");
+        		System.out.println("3. Delete a product");
+        		System.out.println("4. Exit");
         		product_menu2 = ef.nextInt();
         		
         		
         		if(product_menu2 == 1) {
         			
-        			
+        			System.out.println("");
+        			System.out.println("---------------------------------------------------------------");
     			
     			   for (int i = 0; i <= list1Product.size() - 1; i++) {
             
@@ -57,8 +61,18 @@ public class Main {
     				   + list1Product.get(i).NameCategory + " //SubCategory:  "
       						   + list1Product.get(i).SubCategory + " //ID:  " + list1Product.get(i).IdCategory);
       				   
-      				   System.out.println("");
+      				   if(list1Product.get(i).stock) {
+      					   
+      					   System.out.println("The product is in Stock");
+      					   
+      				   }else {
+      					   
+      					   System.out.println("The product isn't in Stock");
+  
+      				   }
       				   
+      				   System.out.println("");
+      				   System.out.println("");
         			}
         			
         			
@@ -71,10 +85,10 @@ public class Main {
         		Scanner fg = new Scanner(System.in);
     			Scanner fl = new Scanner(System.in);
     			Scanner fi = new Scanner(System.in);
-    			
+    			Scanner f2 = new Scanner(System.in);
     			String product_name = "", name_category = "", sub_category = "", i_d = "";
     			float pr_price;
-    			
+    			int bool = 0;
     			System.out.println("To create a new product introduce Product Name, Product Price, Category Name, Sub Category Name and Category ID");
     			System.out.println("");
     			System.out.println("Product Name : ");
@@ -87,13 +101,42 @@ public class Main {
     			sub_category = fl.nextLine();
     			System.out.println("Category ID : ");
     			i_d = fi.nextLine();
+    			System.out.println("If the product is in stock introduce 1, if it isn't introduce 0");
+    			bool = f2.nextInt();
     			
-    			if(product_name !="" && pr_price!=0 && name_category!="" && sub_category!="" && i_d!="") {
+
+    			if(product_name !="" && pr_price!=0 && name_category!="" && sub_category!="" && i_d!="" && (bool ==1 || bool ==0)) {
     			
-    			list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d ));
+    				if(bool == 1) {
+    					
+    					list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d,true));
+    					
+    				}
+    				else {
+    					
+    					list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d,false));
+    					
+    					
+    				}
+    				
+    				
+    			
     			
     			}
 	
+        		}
+        		
+        		if(product_menu2 == 3) {
+        			
+        			       			 
+        			int delete_product;
+    				Scanner yl = new Scanner(System.in);
+    				System.out.println("Introduce the number of theproduct that you want to delete.");
+    				delete_product = yl.nextInt();
+    				delete_product = delete_product -1;
+    			
+    				list1Product.remove(delete_product);
+ 
         		}
         		
 
@@ -108,12 +151,13 @@ public class Main {
     		
     		int admin_menu_2 = 0;
     		
-    		while(admin_menu_2 != 3) {
+    		while(admin_menu_2 != 4) {
     			
     		System.out.println("Welcome to the manage category menu.");
-    		System.out.println("1. View all the categories");
-    		System.out.println("2. Add category");
-    		System.out.println("3. Exit");
+    		System.out.println("1. View all the categories and sub categories");
+    		System.out.println("2. Add category and sub category");
+    		System.out.println("3. Delete a category and sub category");
+    		System.out.println("4. Exit");
     		
     		admin_menu_2 = az.nextInt();
     		
@@ -145,6 +189,9 @@ public class Main {
     		
     		if(admin_menu_2 == 1) {
     			
+    			System.out.println("");
+    			System.out.println("---------------------------------------------------------------");
+    			
     			   for (int i = 0; i <= list1Category.size() - 1; i++) {
             
     				   System.out.println(i+1 + "Category :"); 
@@ -157,6 +204,21 @@ public class Main {
 	
     		}
     		
+    		if(admin_menu_2 == 3) {
+    			
+    			int delete_number;
+    			Scanner yf = new Scanner(System.in);
+    			System.out.println("Introduce the number of the category and sub category that you want to delete.");
+    			delete_number = yf.nextInt();
+    			delete_number = delete_number -1;
+    			
+    			list1Category.remove(delete_number);
+    			
+    			
+    		}
+    		
+    		
+    		
     		
     		
     		}
@@ -164,13 +226,7 @@ public class Main {
     		
      }
     	
-    else {
-    		
-    		
-    		System.out.println("Goodbye");
-    		System.out.println("");
-    		
-    	}
+    
     	
 	
     	}
@@ -357,36 +413,35 @@ public class Main {
 	    	list1Category.add(new Category("Ropa y complementos", "Camisetas", "10022"));
 	    	list1Category.add(new Category("Ropa y complementos", "Pantalones", "1002"));
 	    	
-	    	//Product(float Price,String nameproduct,String NC, String SC, String IC) {
 	    	
-	    	list1Product.add(new Product(11, "Gorro de Natacion","Deportes", "Natacion", "10011"));
-	    	list1Product.add(new Product(10, "Bañador","Deportes","Natacion", "10012"));
+	    	list1Product.add(new Product(11, "Gorro de Natacion","Deportes", "Natacion", "10011",true));
+	    	list1Product.add(new Product(10, "Bañador","Deportes","Natacion", "10012",true));
 	    	
-	    	list1Product.add(new Product(8, "Balon de Baloncesto","Deportes", "Baloncesto", "10011"));
-	    	list1Product.add(new Product(10, "Balon de Futbol","Deportes", "Baloncesto", "10011"));
+	    	list1Product.add(new Product(8, "Balon de Baloncesto","Deportes", "Baloncesto", "10011",true));
+	    	list1Product.add(new Product(10, "Balon de Futbol","Deportes", "Baloncesto", "10011",true));
 	    	
-	    	list1Product.add(new Product(12, "Guantes de Portero","Deportes" , "Futbol", "10011"));
-	    	list1Product.add(new Product(40, "Botas","Deportes" , "Futbol", "10011"));
-	    	
-	    	
-	    	list1Product.add(new Product(150, "Xiaomi 4","Tecnologia" , "Ordenadores", "10011"));
-	    	list1Product.add(new Product(157, "Dell Lao","Tecnologia" , "Ordenadores", "10011"));
-	    	
-	    	list1Product.add(new Product(100, "Xiamo Paco","Tecnologia" , "Moviles", "10011"));
-	    	list1Product.add(new Product(15, "Motorola Final","Tecnologia" , "Moviles", "10011"));
-	    	
-	    	list1Product.add(new Product(1554, "Pepe Tv","Tecnologia" , "Televiones", "10011"));
-	    	list1Product.add(new Product(1509, "Sony Tv","Tecnologia" , "Televiones", "10011"));
+	    	list1Product.add(new Product(12, "Guantes de Portero","Deportes" , "Futbol", "10011",true));
+	    	list1Product.add(new Product(40, "Botas","Deportes" , "Futbol", "10011",true));
 	    	
 	    	
-	    	list1Product.add(new Product(15, "Sudadera Otoño","Ropa y complementos" , "Sudaderas", "10011"));
-	    	list1Product.add(new Product(16, "Sudadera Arctic Monkeys","Ropa y complementos" , "Sudaderas", "10011"));
+	    	list1Product.add(new Product(150, "Xiaomi 4","Tecnologia" , "Ordenadores", "10011",true));
+	    	list1Product.add(new Product(157, "Dell Lao","Tecnologia" , "Ordenadores", "10011",true));
 	    	
-	    	list1Product.add(new Product(5, "Camiseta One Piece","Ropa y complementos" , "Camisetas", "10011"));
-	    	list1Product.add(new Product(17, "Camiseta Tirantes Velax","Ropa y complementos" , "Camisetas", "10011"));
+	    	list1Product.add(new Product(100, "Xiamo Paco","Tecnologia" , "Moviles", "10011",true));
+	    	list1Product.add(new Product(15, "Motorola Final","Tecnologia" , "Moviles", "10011",true));
 	    	
-	    	list1Product.add(new Product(25, "Shorts","Ropa y complementos" , "Pantalones", "10011"));
-	    	list1Product.add(new Product(11, "Pesqueros","Ropa y complementos" , "Pantalones", "10011"));
+	    	list1Product.add(new Product(1554, "Pepe Tv","Tecnologia" , "Televiones", "10011",true));
+	    	list1Product.add(new Product(1509, "Sony Tv","Tecnologia" , "Televiones", "10011",true));
+	    	
+	    	
+	    	list1Product.add(new Product(15, "Sudadera Otoño","Ropa y complementos" , "Sudaderas", "10011",true));
+	    	list1Product.add(new Product(16, "Sudadera Arctic Monkeys","Ropa y complementos" , "Sudaderas", "10011",true));
+	    	
+	    	list1Product.add(new Product(5, "Camiseta One Piece","Ropa y complementos" , "Camisetas", "10011",true));
+	    	list1Product.add(new Product(17, "Camiseta Tirantes Velax","Ropa y complementos" , "Camisetas", "10011",true));
+	    	
+	    	list1Product.add(new Product(25, "Shorts","Ropa y complementos" , "Pantalones", "10011",true));
+	    	list1Product.add(new Product(11, "Pesqueros","Ropa y complementos" , "Pantalones", "10011",true));
 	    	
 		
 		while(origin!=3){
@@ -429,13 +484,15 @@ public class Main {
 				Scanner dr = new Scanner(System.in);
 				System.out.println("List of Categories :");
 				
+				System.out.println("");
+    			System.out.println("---------------------------------------------------------------");
+				
 				for (int i = 0; i <= list1Category.size() - 1; i++) {
-				       
-					
-		            
+
  				   System.out.println(i+1 + "Category :"); 
    				   System.out.println("//Name Category:  " + list1Category.get(i).NameCategory + " //SubCategory:  "
    						   + list1Category.get(i).SubCategory + " //ID:  " + list1Category.get(i).IdCategory);
+   				   
    				   
    				   System.out.println("");
 			
@@ -449,14 +506,28 @@ public class Main {
 				
 				String hola = list1Category.get(Category_Number).NameCategory;
 				
+				System.out.println("");
+    			System.out.println("---------------------------------------------------------------");
+				
 				for (int i = 0; i <= list1Product.size() - 1; i++) {
 		            
 					if(hola.equals(list1Product.get(i).NameCategory)) {
 					
  				   System.out.println(i+1 + "Product :"); 
    				   System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price);
+   				   if(list1Product.get(i).stock) {
+					   
+					   System.out.println("The product is in Stock");
+					   
+				   }else {
+					   
+					   System.out.println("The product isn't in Stock");
+
+				   }
+   				   
    				   System.out.println("");
-					
+   				   System.out.println("");
+   				   
 					}
    				   
      			}
@@ -469,6 +540,7 @@ public class Main {
 				
 				System.out.println("Categories : ");
 				System.out.println("");
+    			System.out.println("---------------------------------------------------------------");
 				
 				 for (int i = 0; i <= list1Category.size() - 1; i++) {
     
@@ -499,11 +571,8 @@ public class Main {
 				
 			}
 			
-			
-			
 			}
-			
-			
+
 		}
 		
 		if(origin == 2) {
@@ -522,7 +591,7 @@ public class Main {
 		        password = p3.nextLine();
 
 		        if(mal.equals(email)&&(na.equals(username))&&(pass.equals(password))) {
-		        	
+		        	System.out.println("");
 		        	pract.Administrator();
 		        	
 		        }else {
