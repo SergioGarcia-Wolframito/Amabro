@@ -401,47 +401,47 @@ public class Main {
 		
 		
 	    	
-	    	list1Category.add(new Category("Deportes", "Natacion", "10010"));
-	    	list1Category.add(new Category("Deportes", "Baloncesto", "10010"));
-	    	list1Category.add(new Category("Deportes", "Futbol", "10010"));
+	    	list1Category.add(new Category("Sports", "Swimming", "10010"));
+	    	list1Category.add(new Category("Sports", "Basketball", "10010"));
+	    	list1Category.add(new Category("Sports", "Soccer", "10010"));
 	    	
-	    	list1Category.add(new Category("Tecnologia", "Ordenadores", "10011"));
-	    	list1Category.add(new Category("Tecnologia", "Moviles", "10012"));
-	    	list1Category.add(new Category("Tecnologia", "Televiones", "10013"));
+	    	list1Category.add(new Category("Tecnollogy", "Computers", "10011"));
+	    	list1Category.add(new Category("Tecnollogy", "Mobile Phones", "10012"));
+	    	list1Category.add(new Category("Tecnollogy", "TV", "10013"));
 	    	
-	    	list1Category.add(new Category("Ropa y complementos", "Sudaderas", "10021"));
-	    	list1Category.add(new Category("Ropa y complementos", "Camisetas", "10022"));
-	    	list1Category.add(new Category("Ropa y complementos", "Pantalones", "1002"));
-	    	
-	    	
-	    	list1Product.add(new Product(11, "Gorro de Natacion","Deportes", "Natacion", "10011",true));
-	    	list1Product.add(new Product(10, "Bañador","Deportes","Natacion", "10012",true));
-	    	
-	    	list1Product.add(new Product(8, "Balon de Baloncesto","Deportes", "Baloncesto", "10011",true));
-	    	list1Product.add(new Product(10, "Balon de Futbol","Deportes", "Baloncesto", "10011",true));
-	    	
-	    	list1Product.add(new Product(12, "Guantes de Portero","Deportes" , "Futbol", "10011",true));
-	    	list1Product.add(new Product(40, "Botas","Deportes" , "Futbol", "10011",true));
+	    	list1Category.add(new Category("Clothes and complements", "Sweatshirts", "10021"));
+	    	list1Category.add(new Category("Clothes and complements", "T Shirts", "10022"));
+	    	list1Category.add(new Category("Clothes and complements", "Pants", "1002"));
 	    	
 	    	
-	    	list1Product.add(new Product(150, "Xiaomi 4","Tecnologia" , "Ordenadores", "10011",true));
-	    	list1Product.add(new Product(157, "Dell Lao","Tecnologia" , "Ordenadores", "10011",true));
+	    	list1Product.add(new Product(11, "Swimming Glasses","Sports", "Swimming", "10011",true));
+	    	list1Product.add(new Product(10, "Velax swimsuit","Sports","Swimming", "10012",true));
 	    	
-	    	list1Product.add(new Product(100, "Xiamo Paco","Tecnologia" , "Moviles", "10011",true));
-	    	list1Product.add(new Product(15, "Motorola Final","Tecnologia" , "Moviles", "10011",true));
+	    	list1Product.add(new Product(8, "Basket Ball","Sports", "Basketball", "10011",true));
+	    	list1Product.add(new Product(10, "Soccer Ball","Sports", "Basketball", "10011",true));
 	    	
-	    	list1Product.add(new Product(1554, "Pepe Tv","Tecnologia" , "Televiones", "10011",true));
-	    	list1Product.add(new Product(1509, "Sony Tv","Tecnologia" , "Televiones", "10011",true));
+	    	list1Product.add(new Product(12, "Goalkeeper gloves","Sports" , "Soccer", "10011",true));
+	    	list1Product.add(new Product(40, "Shoes","Sports" , "Soccer", "10011",true));
 	    	
 	    	
-	    	list1Product.add(new Product(15, "Sudadera Otoño","Ropa y complementos" , "Sudaderas", "10011",true));
-	    	list1Product.add(new Product(16, "Sudadera Arctic Monkeys","Ropa y complementos" , "Sudaderas", "10011",true));
+	    	list1Product.add(new Product(150, "Xiaomi 4","Tecnollogy" , "Computers", "10011",true));
+	    	list1Product.add(new Product(157, "Dell Lao","Tecnollogy" , "Computers", "10011",true));
 	    	
-	    	list1Product.add(new Product(5, "Camiseta One Piece","Ropa y complementos" , "Camisetas", "10011",true));
-	    	list1Product.add(new Product(17, "Camiseta Tirantes Velax","Ropa y complementos" , "Camisetas", "10011",true));
+	    	list1Product.add(new Product(100, "Xiamo Paco","Tecnollogy" , "Mobile Phones", "10011",true));
+	    	list1Product.add(new Product(15, "Motorola Final","Tecnollogy" , "Mobile Phones", "10011",true));
 	    	
-	    	list1Product.add(new Product(25, "Shorts","Ropa y complementos" , "Pantalones", "10011",true));
-	    	list1Product.add(new Product(11, "Pesqueros","Ropa y complementos" , "Pantalones", "10011",true));
+	    	list1Product.add(new Product(1554, "Pepe Tv","Tecnollogy" , "TV", "10011",true));
+	    	list1Product.add(new Product(1509, "Sony Tv","Tecnollogy" , "TV", "10011",true));
+	    	
+	    	
+	    	list1Product.add(new Product(15, "Jay Clock","Clothes and complements" , "Sweatshirts", "10011",true));
+	    	list1Product.add(new Product(16, "Arctic Monkeys","Clothes and complements" , "Sweatshirts", "10011",true));
+	    	
+	    	list1Product.add(new Product(5, "One Piece","Clothes and complements" , "T Shirts", "10011",true));
+	    	list1Product.add(new Product(17, "Velax T","Clothes and complements" , "T Shirts", "10011",true));
+	    	
+	    	list1Product.add(new Product(25, "Shorts","Clothes and complements" , "Pants", "10011",true));
+	    	list1Product.add(new Product(11, "Big Pants","Clothes and complements" , "Pants", "10011",true));
 	    	
 		
 		while(origin!=3){
@@ -470,6 +470,7 @@ public class Main {
 			System.out.println("3. Categories.");
 			System.out.println("4. Change product price to dollars.");
 			System.out.println("5. Go out.");
+			System.out.println("Introduce the number of the option.");
 			menu2 = df.nextInt();
 			
 			if(menu2 == 1) {

@@ -1,5 +1,8 @@
 public class Product extends Category{
 
+	
+
+
 	float price;
 	String NameProduct;
 	
@@ -11,6 +14,20 @@ public class Product extends Category{
 		NameProduct = nameproduct;
 		stock = sto;
 		
+	}
+	
+	protected float getPrice() {
+		return price;
+	}
+
+
+	protected String getNameProduct() {
+		return NameProduct;
+	}
+
+
+	protected boolean getStock() {
+		return stock;
 	}
 	
 	

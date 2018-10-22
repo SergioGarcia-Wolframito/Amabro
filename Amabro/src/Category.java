@@ -16,6 +16,29 @@ public class Category {
 		IdCategory = IC;
 	
 	}
+
+
+
+
+	protected String getNameCategory() {
+		return NameCategory;
+	}
+
+
+
+
+	protected String getSubCategory() {
+		return SubCategory;
+	}
+
+
+
+
+	protected String getIdCategory() {
+		return IdCategory;
+	}
+	
+	
 	
 	
 	
