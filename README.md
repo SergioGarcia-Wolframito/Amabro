@@ -1,18 +1,19 @@
 # Amabro
-Amabro, es el nombre que le he dado a mi proyecto.
+Amabro, is the name of my project.
 
-Consiste en una especie de tienda online bastante simple, en la que de primeras, tienes dos opciones, entrar como User o como Administrator.
+It consists of a kind of online store quite simple, in which first, you have two options, enter as User or Administrator.
 
-- Cuando elegimos la opción de Administrator, nos pedirá que introduzcamos por teclado un UserName, Email y una Password, que estarán detallados en el fichero "config", dado que si no introduces esos mismos datos, Amabro se cierra automáticamente.
+- When we choose the Administrator option, it will ask us to enter a UserName, Email and Password, which will be detailed in the "config" file, if you do not enter the same data, Amabro closes automatically.
 
-Una vez hayamos introducido los datos que vienen detallados en el "config", nos llevará al menú de Administrador, desde donde tendremos opción a manejar los Productos y las Categorias de amabro, dado que son dos listas independientes, y podremos añadir datos, borrar datos y leer los datos de cada lista.
+Once we have entered the data that is detailed in the "config", it will take us to the Administrator menu, from where we will have the option to manage the Products and the Categories, they are two independent lists, and we can add, delete and read the data of each list.
 
 
-- Cuando elegimos la opción de User, nos pedirá que introduzcamos un UserName, Email y una Password y como medida de seguridad, he añadido que Amabro te vuelva a pedir otra vez la contraseña, y hasta que las dos no coincidan el usuario no tendrá acceso a Amabro.
+- When we choose the User option,it will ask you to enter a UserName, Email and Password and as a security measure, Amabro will ask you for the password again, and until the two do not match, the user will not have access to it.
 
-Una vez dentro del menu de usuario podemos ver que tenemos 4 opciones útiles, Account, desde donde el usuario puede editar su UserName, su Email y su Password, y al mismo tiempo tendrá la opcion de ver sus datos de usuario, menos la contraseña, por medidas de seguridad.
 
-Las otras tres opciones estarán relacionadas directamente con el concepto de tienda, ya que desde ellas podremos acceder a los productos, a las categorias y a la cuarta opción donde introduciendo el numero de un producto, podrán cambiar su precio en euros a dolares.
+Once you are inside the user menu you can see that there are 4 useful options, Account, from where the user can edit his UserName, his Email and his Password, and at the same time he will have the option to see his user data, except the password, for security measures.
 
-Esta es una sencilla explicación de lo que hace Amabro, es un proyecto que tiene mucho que mejorar y mucho que ofrecer.
+The other three options will be directly related to the store concept, since from them we can access the products, the categories and the fourth option where entering the number of a product, they can change their price in dollars to dollars.
+
+This is a simple explanation of what Amabro does, it is a project that has a lot to improve and a lot to offer.
 
