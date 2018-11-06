@@ -1,14 +1,10 @@
-
-
 public class Category {
 	
-	String NameCategory = "";
-	String SubCategory = "";
-	String IdCategory = "";
+	protected String NameCategory = "";
+	protected String SubCategory = "";
+	protected String IdCategory = "";
 	
 	
-	
-
 	protected Category(String NC, String SC, String IC) {
 		
 		NameCategory = NC;
@@ -18,29 +14,14 @@ public class Category {
 	}
 
 
-
-
 	protected String getNameCategory() {
 		return NameCategory;
 	}
-
-
-
-
 	protected String getSubCategory() {
 		return SubCategory;
 	}
-
-
-
-
 	protected String getIdCategory() {
 		return IdCategory;
 	}
 	
-	
-	
-	
-	
-
 }

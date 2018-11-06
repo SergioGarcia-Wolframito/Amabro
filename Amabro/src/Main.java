@@ -1,24 +1,24 @@
 import java.util.List;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Properties;
 public class Main {
 
 	static int Category_Number;
-	
 	static Main pract = new Main();
-	
 	static String mal,na,pass;
 	static String mail = "",usuario = "",contra = "";
-	
 	static List <Category> list1Category = new ArrayList <Category>();
 	static List <Product> list1Product = new ArrayList<Product>();
-	
 	static boolean user_menu = false;
 	static boolean user_menu2 = false;
+	static float total_price = 0;
 
-    
+   
     void Administrator() {
     	
     	
@@ -619,12 +619,13 @@ public class Main {
 				Scanner buy = new Scanner(System.in);
 				int buymenu = 0;
 				
-				while(buymenu != 4) {
+				while(buymenu != 5) {
 					
 					System.out.println("1. Buy a product.");
 					System.out.println("2. Don't buy a product.");
 					System.out.println("3. Cart info.");
-					System.out.println("4. Exit.");
+					System.out.println("4. Print ticket.");
+					System.out.println("5. Exit.");
 					System.out.println("Introduce the number of the option.");
 					buymenu = buy.nextInt();
 					
@@ -702,7 +703,7 @@ public class Main {
 						System.out.println("Products that you buy:");
 						System.out.println("");
 						System.out.println("");
-						float total_price = 0;
+						
 						
 						for (int i = 0; i <= list1Product.size() - 1; i++) {
 
@@ -720,6 +721,82 @@ public class Main {
 						
 						System.out.println("");
 						System.out.println("The total price is : " + total_price);
+						
+					}
+					
+					
+					
+					if(buymenu == 4) {
+						
+						System.out.println("The file of your buy is in your Deskctop.");
+						
+						FileReader leer = null;
+						FileWriter escribir = null;
+						
+						String jump = "\r\n";
+						String space = "\t";
+						
+						
+						try {
+							
+							
+							
+							File f = new File("C:/Users/sergi/Desktop/nuevo.txt");
+							
+							
+							if(f.exists()) {
+								
+								f.delete();
+								f.createNewFile();
+								
+							}
+							
+							FileWriter f2 = new FileWriter(f, true);
+							
+				
+							for(int i = 0;i<list1Product.size();i++) {
+								
+								if(list1Product.get(i).compra) {
+								f2.write(jump);
+								f2.write("------------------------------------->>>>");
+								f2.write(jump);
+								f2.write(i+1 + "Product :");
+
+								f2.write("Product Name :" + list1Product.get(i).NameProduct);
+								f2.write(space);
+								f2.write("Product Price :" + list1Product.get(i).price);
+								f2.write(jump);
+								}
+							}
+							f2.write(jump);
+							f2.write(jump);
+							
+							
+							f2.close();
+
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+						/*
+						for (int i = 0; i <= list1Product.size() - 1; i++) {
+
+   				   		if(list1Product.get(i).compra) {
+					   
+					    System.out.println(i+1 + "Product :"); 
+   				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price);
+					   
+   				   		total_price = total_price + list1Product.get(i).price;
+   				   		
+   				   		
+				   		}
+
+     			         }
+
+						
+						*/
+						
 						
 					}
 						
