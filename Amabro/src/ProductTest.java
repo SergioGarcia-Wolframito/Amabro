@@ -8,7 +8,7 @@ class ProductTest {
 	@Test
 	void test() {
 		
-		Product product = new Product(0, "Tecnology", "MobilePhone", "15002", "Xiaomi Mi 8", false,false);
+		Product product = new Product(0, "Tecnology", "MobilePhone", "15002", "Xiaomi Mi 8", false,false,10,0);
 		
 		assertEquals(product.getPrice(),0);
 		assertEquals(product.getNameProduct(),"Xiaomi Mi 8");

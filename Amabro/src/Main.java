@@ -16,8 +16,7 @@ public class Main {
 	static List <Product> list1Product = new ArrayList<Product>();
 	static boolean user_menu = false;
 	static boolean user_menu2 = false;
-	static float total_price = 0;
-
+	
    
     void Administrator() {
     	
@@ -87,8 +86,12 @@ public class Main {
     			Scanner fl = new Scanner(System.in);
     			Scanner fi = new Scanner(System.in);
     			Scanner f2 = new Scanner(System.in);
+    			Scanner f3 = new Scanner(System.in);
     			String product_name = "", name_category = "", sub_category = "", i_d = "";
     			float pr_price;
+    			
+    			int cantidad1 = 0;
+    			
     			int bool = 0;
     			System.out.println("To create a new product introduce Product Name, Product Price, Category Name, Sub Category Name and Category ID");
     			System.out.println("");
@@ -102,6 +105,8 @@ public class Main {
     			sub_category = fl.nextLine();
     			System.out.println("Category ID : ");
     			i_d = fi.nextLine();
+    			System.out.println("Number of Products : ");
+    			cantidad1 = f3.nextInt();
     			System.out.println("If the product is in stock introduce 1, if it isn't introduce 0");
     			bool = f2.nextInt();
     			
@@ -110,12 +115,12 @@ public class Main {
     			
     				if(bool == 1) {
     					
-    					list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d,true,false));
+    					list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d,true,false,cantidad1,0));
     					
     				}
     				else {
     					
-    					list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d,false,false));
+    					list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d,false,false,cantidad1,0));
     					
     					
     				}
@@ -397,10 +402,7 @@ public class Main {
 			
 		}
 				
-			
-    	
 		}
-		
 		
     	}
 		
@@ -438,8 +440,6 @@ public class Main {
 		
 		int origin = 0;
 		
-		
-	    	
 	    	list1Category.add(new Category("Sports", "Swimming", "10010"));
 	    	list1Category.add(new Category("Sports", "Basketball", "10010"));
 	    	list1Category.add(new Category("Sports", "Soccer", "10010"));
@@ -452,35 +452,36 @@ public class Main {
 	    	list1Category.add(new Category("Clothes and complements", "T Shirts", "10022"));
 	    	list1Category.add(new Category("Clothes and complements", "Pants", "1002"));
 	    	
+	    	//int c,int cc
 	    	
-	    	list1Product.add(new Product(11, "Swimming Glasses","Sports", "Swimming", "10011",true,false));
-	    	list1Product.add(new Product(10, "Velax swimsuit","Sports","Swimming", "10012",true,false));
+	    	list1Product.add(new Product(11, "Swimming Glasses","Sports", "Swimming", "10011",true,false,10,0));
+	    	list1Product.add(new Product(10, "Velax swimsuit","Sports","Swimming", "10012",true,false,10,0));
 	    	
-	    	list1Product.add(new Product(8, "Basket Ball","Sports", "Basketball", "10011",true,false));
-	    	list1Product.add(new Product(10, "Soccer Ball","Sports", "Basketball", "10011",true,false));
+	    	list1Product.add(new Product(8, "Basket Ball","Sports", "Basketball", "10011",true,false,10,0));
+	    	list1Product.add(new Product(10, "Soccer Ball","Sports", "Basketball", "10011",true,false,10,0));
 	    	
-	    	list1Product.add(new Product(12, "Goalkeeper gloves","Sports" , "Soccer", "10011",true,false));
-	    	list1Product.add(new Product(40, "Shoes","Sports" , "Soccer", "10011",true,false));
-	    	
-	    	
-	    	list1Product.add(new Product(150, "Xiaomi 4","Tecnollogy" , "Computers", "10011",true,false));
-	    	list1Product.add(new Product(157, "Dell Lao","Tecnollogy" , "Computers", "10011",true,false));
-	    	
-	    	list1Product.add(new Product(100, "Xiamo Paco","Tecnollogy" , "Mobile Phones", "10011",true,false));
-	    	list1Product.add(new Product(15, "Motorola Final","Tecnollogy" , "Mobile Phones", "10011",true,false));
-	    	
-	    	list1Product.add(new Product(1554, "Pepe Tv","Tecnollogy" , "TV", "10011",true,false));
-	    	list1Product.add(new Product(1509, "Sony Tv","Tecnollogy" , "TV", "10011",true,false));
+	    	list1Product.add(new Product(12, "Goalkeeper gloves","Sports" , "Soccer", "10011",true,false,10,0));
+	    	list1Product.add(new Product(40, "Shoes","Sports" , "Soccer", "10011",true,false,10,0));
 	    	
 	    	
-	    	list1Product.add(new Product(15, "Jay Clock","Clothes and complements" , "Sweatshirts", "10011",true,false));
-	    	list1Product.add(new Product(16, "Arctic Monkeys","Clothes and complements" , "Sweatshirts", "10011",true,false));
+	    	list1Product.add(new Product(150, "Xiaomi 4","Tecnollogy" , "Computers", "10011",true,false,10,0));
+	    	list1Product.add(new Product(157, "Dell Lao","Tecnollogy" , "Computers", "10011",true,false,10,0));
 	    	
-	    	list1Product.add(new Product(5, "One Piece","Clothes and complements" , "T Shirts", "10011",true,false));
-	    	list1Product.add(new Product(17, "Velax T","Clothes and complements" , "T Shirts", "10011",true,false));
+	    	list1Product.add(new Product(100, "Xiamo Paco","Tecnollogy" , "Mobile Phones", "10011",true,false,10,0));
+	    	list1Product.add(new Product(15, "Motorola Final","Tecnollogy" , "Mobile Phones", "10011",true,false,10,0));
 	    	
-	    	list1Product.add(new Product(25, "Shorts","Clothes and complements" , "Pants", "10011",true,false));
-	    	list1Product.add(new Product(11, "Big Pants","Clothes and complements" , "Pants", "10011",true,false));
+	    	list1Product.add(new Product(1554, "Pepe Tv","Tecnollogy" , "TV", "10011",true,false,10,0));
+	    	list1Product.add(new Product(1509, "Sony Tv","Tecnollogy" , "TV", "10011",true,false,10,0));
+	    	
+	    	
+	    	list1Product.add(new Product(15, "Jay Clock","Clothes and complements" , "Sweatshirts", "10011",true,false,10,0));
+	    	list1Product.add(new Product(16, "Arctic Monkeys","Clothes and complements" , "Sweatshirts", "10011",true,false,10,0));
+	    	
+	    	list1Product.add(new Product(5, "One Piece","Clothes and complements" , "T Shirts", "10011",true,false,10,0));
+	    	list1Product.add(new Product(17, "Velax T","Clothes and complements" , "T Shirts", "10011",true,false,10,0));
+	    	
+	    	list1Product.add(new Product(25, "Shorts","Clothes and complements" , "Pants", "10011",true,false,10,0));
+	    	list1Product.add(new Product(11, "Big Pants","Clothes and complements" , "Pants", "10011",true,false,10,0));
 	    	
 		
 		while(origin!=3){
@@ -639,18 +640,36 @@ public class Main {
 						
 						System.out.println("Introduce the number of the product that you want to buy.");
 						buy1 = hu.nextInt();
-						
 						buy1 = buy1-1;
 						
-						if(list1Product.get(buy1).stock==true) {
+						if(list1Product.get(buy1).stock && list1Product.get(buy1).getCantidad()!=0 ) {
 							
-							list1Product.get(buy1).setCompra(true);
+							int canty = 0;
+							Scanner dy = new Scanner(System.in);
+							System.out.println("How many products do you want ?");
+							canty = dy.nextInt();
+							
+							if(canty <= list1Product.get(buy1).getCantidad()) {
+								
+								int cant = list1Product.get(buy1).getCantidad() - canty;
+								int cantc =  list1Product.get(buy1).getCantidadcomprados() + canty;
+								list1Product.get(buy1).setCompra(true);
+								list1Product.get(buy1).setCantidad(cant);
+								list1Product.get(buy1).setCantidadcomprados(cantc);
+								
+								
+							}else {
+								
+								System.out.println("Sorry, there are only : "+ list1Product.get(buy1).getCantidad());
+								System.out.println("");
+							}
+							
 							
 						}else {
 							
 							System.out.println("The product isn't in Stock");
-							
-							
+							System.out.println("");
+
 						}
 							
 							
@@ -671,7 +690,8 @@ public class Main {
 
 			   				   if(list1Product.get(i).compra) {
 								   
-								    System.out.println(i+1 + "Product :"); 
+								    System.out.println(i+1 + "Product :");
+								    System.out.println("Number of Products : "+list1Product.get(i).getCantidadcomprados());
 			   				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price);
 								   	
 							   }
@@ -690,7 +710,16 @@ public class Main {
 							System.out.println("Introduce the number of the product you want to remove.");
 							product_1 = hj.nextInt();
 							product_1 = product_1-1;
+							
+							int productcant = list1Product.get(product_1).getCantidadcomprados() -1;
+
+							list1Product.get(product_1).setCantidadcomprados(productcant);
+							
+							if(list1Product.get(product_1).getCantidadcomprados() == 0) {
+								
 							list1Product.get(product_1).setCompra(false);
+							
+							}
 							
 						}
 						
@@ -699,10 +728,14 @@ public class Main {
 					
 					if(buymenu == 3) {
 						
+						float total_price = 0;
+
+						
 						System.out.println("---------------------------------------------------------------");
 						System.out.println("Products that you buy:");
 						System.out.println("");
 						System.out.println("");
+						
 						
 						
 						for (int i = 0; i <= list1Product.size() - 1; i++) {
@@ -710,10 +743,10 @@ public class Main {
    				   if(list1Product.get(i).compra) {
 					   
 					    System.out.println(i+1 + "Product :"); 
+					    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
    				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price);
 					   
-   				   		total_price = total_price + list1Product.get(i).price;
-   				   		
+   				   		total_price = total_price + list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
    				   		
 				   }
 
@@ -728,7 +761,29 @@ public class Main {
 					
 					if(buymenu == 4) {
 						
-						System.out.println("The file of your buy is in your Deskctop.");
+						String ruta = "C:/Users/sergi/Desktop/TicketAmabro.txt";
+						
+						int path = 0;
+						Scanner tr = new Scanner(System.in);
+						System.out.println("Introduce the option.");
+						System.out.println("1. Predeterminated Path.");
+						System.out.println("2. Other Path");
+						path = tr.nextInt();
+						
+						if(path == 1) {
+							
+							System.out.println("The ticket of your buy is in your Desktop.");
+							
+						}
+						
+						if(path == 2) {
+							Scanner tx = new Scanner(System.in);
+							String newpath;
+							System.out.println("Introduce the new Path.");
+							newpath = tx.nextLine();
+							ruta = newpath;
+							
+						}
 						
 						FileReader leer = null;
 						FileWriter escribir = null;
@@ -738,10 +793,8 @@ public class Main {
 						
 						
 						try {
-							
-							
-							
-							File f = new File("C:/Users/sergi/Desktop/nuevo.txt");
+
+							File f = new File(ruta);
 							
 							
 							if(f.exists()) {
@@ -753,25 +806,36 @@ public class Main {
 							
 							FileWriter f2 = new FileWriter(f, true);
 							
+							float tprice = 0;
+							
+							f2.write("\t \t \t \t AMABRO BUY TICKET ");
+							f2.write(jump);
+							f2.write(jump);
 				
 							for(int i = 0;i<list1Product.size();i++) {
 								
 								if(list1Product.get(i).compra) {
 								f2.write(jump);
-								f2.write("------------------------------------->>>>");
+								f2.write("-------------------------------------");
 								f2.write(jump);
-								f2.write(i+1 + "Product :");
-
+								f2.write(i+1 + "Product -->");
+								f2.write(jump);
+								f2.write("Number of Products : "+list1Product.get(i).getCantidadcomprados());
+								f2.write(space);
 								f2.write("Product Name :" + list1Product.get(i).NameProduct);
 								f2.write(space);
-								f2.write("Product Price :" + list1Product.get(i).price);
+								f2.write("Price :" + list1Product.get(i).price);
 								f2.write(jump);
+								
+							
+								tprice = tprice +  list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
+								
 								}
 							}
+							
 							f2.write(jump);
 							f2.write(jump);
-							
-							
+							f2.write("Total Price : " + (int) tprice);
 							f2.close();
 
 						} catch (IOException e) {
@@ -779,30 +843,9 @@ public class Main {
 							e.printStackTrace();
 						}
 						
-						/*
-						for (int i = 0; i <= list1Product.size() - 1; i++) {
-
-   				   		if(list1Product.get(i).compra) {
-					   
-					    System.out.println(i+1 + "Product :"); 
-   				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price);
-					   
-   				   		total_price = total_price + list1Product.get(i).price;
-   				   		
-   				   		
-				   		}
-
-     			         }
-
-						
-						*/
-						
-						
+	
 					}
-						
-						
-						
-						
+												
 					}
 					
 					
@@ -813,12 +856,8 @@ public class Main {
 				
 			}
 			
-			
-			
 			}
 
-		
-		
 		if(origin == 2) {
 
 	        Scanner p1 = new Scanner(System.in);
@@ -844,9 +883,7 @@ public class Main {
 		        }	
 		}
 		else{	
-			
-			
-			
+	
 		}
 		
 		}
