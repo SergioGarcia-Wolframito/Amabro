@@ -32,8 +32,19 @@ public class Main {
     	System.out.println("2. Manage categories and sub categories");
     	System.out.println("3. Exit");  
     	
+    	try {
     	Admin_menu = am.nextInt();
-    	
+    	}catch(Exception e) {
+    		
+    		e.printStackTrace();
+    		System.out.println("That's not a numeric value.");
+    		
+    	}finally {
+    		
+    		
+    		System.out.println("Adios");
+    		
+    	}
     	if(Admin_menu == 1) {
     		
     		Scanner ef = new Scanner(System.in);
@@ -231,10 +242,7 @@ public class Main {
     		
     		
      }
-    	
-    
-    	
-	
+    		
     	}
     	
         	
@@ -642,14 +650,14 @@ public class Main {
 						buy1 = hu.nextInt();
 						buy1 = buy1-1;
 						
-						if(list1Product.get(buy1).stock && list1Product.get(buy1).getCantidad()!=0 ) {
+						if(list1Product.get(buy1).stock && list1Product.get(buy1).getCantidad()!=0&& buy1!=0  ) {
 							
 							int canty = 0;
 							Scanner dy = new Scanner(System.in);
 							System.out.println("How many products do you want ?");
 							canty = dy.nextInt();
 							
-							if(canty <= list1Product.get(buy1).getCantidad()) {
+							if(canty <= list1Product.get(buy1).getCantidad()&& canty!=0) {
 								
 								int cant = list1Product.get(buy1).getCantidad() - canty;
 								int cantc =  list1Product.get(buy1).getCantidadcomprados() + canty;
@@ -692,7 +700,7 @@ public class Main {
 								   
 								    System.out.println(i+1 + "Product :");
 								    System.out.println("Number of Products : "+list1Product.get(i).getCantidadcomprados());
-			   				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price);
+			   				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
 								   	
 							   }
 
@@ -711,7 +719,28 @@ public class Main {
 							product_1 = hj.nextInt();
 							product_1 = product_1-1;
 							
-							int productcant = list1Product.get(product_1).getCantidadcomprados() -1;
+							
+							int productcant = 0;
+							
+							
+							if(list1Product.get(product_1).getCantidadcomprados() != 1) {
+								Scanner ft = new Scanner(System.in);
+								
+								System.out.println("How many products do you want to remove?");
+								productcant = ft.nextInt();
+								productcant = list1Product.get(product_1).getCantidadcomprados() - productcant;
+								if(productcant>list1Product.get(product_1).getCantidadcomprados()) {
+									
+									System.out.println("There are only : "+ list1Product.get(product_1).getCantidadcomprados());
+	
+								}
+								
+							}else {
+								
+								productcant = list1Product.get(product_1).getCantidadcomprados()-1;
+							}
+							
+							
 
 							list1Product.get(product_1).setCantidadcomprados(productcant);
 							
@@ -744,7 +773,7 @@ public class Main {
 					   
 					    System.out.println(i+1 + "Product :"); 
 					    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
-   				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price);
+   				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
 					   
    				   		total_price = total_price + list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
    				   		
@@ -753,7 +782,7 @@ public class Main {
      			         }
 						
 						System.out.println("");
-						System.out.println("The total price is : " + total_price);
+						System.out.println("The total price is : " + total_price+"€");
 						
 					}
 					
@@ -807,6 +836,7 @@ public class Main {
 							FileWriter f2 = new FileWriter(f, true);
 							
 							float tprice = 0;
+							float tpriceiva =  0;
 							
 							f2.write("\t \t \t \t AMABRO BUY TICKET ");
 							f2.write(jump);
@@ -824,18 +854,25 @@ public class Main {
 								f2.write(space);
 								f2.write("Product Name :" + list1Product.get(i).NameProduct);
 								f2.write(space);
-								f2.write("Price :" + list1Product.get(i).price);
+								f2.write("Price :" + list1Product.get(i).price+"€");
 								f2.write(jump);
 								
 							
 								tprice = tprice +  list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
 								
+								
+								
 								}
 							}
-							
+							tpriceiva = (float) (tprice * 0.21);
+							float jony = tpriceiva + tprice;
 							f2.write(jump);
 							f2.write(jump);
-							f2.write("Total Price : " + (int) tprice);
+							f2.write("Total Price : " + (int) tprice+"€");
+							f2.write(jump);
+							f2.write("Total Price + IVA : " + jony+"€");
+							f2.write(jump);
+							f2.write("IVA = 21%");
 							f2.close();
 
 						} catch (IOException e) {
