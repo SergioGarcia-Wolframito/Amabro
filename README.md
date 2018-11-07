@@ -17,4 +17,5 @@ The other three options will be directly related to the store concept, since fro
 
 This is a simple explanation of what Amabro does, it is a project that has a lot to improve and a lot to offer.
 
-![]Amabro/
+![](Amabro%20Screenshots/Menu.PNG)
+https://github.com/SergioGarcia-Wolframito/Practica1/blob/master/Amabro%20Screenshots/Menu.PNG
