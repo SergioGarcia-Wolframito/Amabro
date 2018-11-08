@@ -12,44 +12,29 @@ public class Main {
 	static Main pract = new Main();
 	static String mal,na,pass;
 	static String mail = "",usuario = "",contra = "";
+	
 	static List <Category> list1Category = new ArrayList <Category>();
 	static List <Product> list1Product = new ArrayList<Product>();
+	
 	static boolean user_menu = false;
 	static boolean user_menu2 = false;
 	
-   
     void Administrator() {
     	
-    	
     	Scanner am = new Scanner(System.in);
-
     	int Admin_menu = 0;
-    	
     	while(Admin_menu!=3) {
     	
     	System.out.println("Welcome to the admin menu.");
     	System.out.println("1. Manage products");
     	System.out.println("2. Manage categories and sub categories");
-    	System.out.println("3. Exit");  
-    	
-    	try {
+    	System.out.println("3. Exit");      	
     	Admin_menu = am.nextInt();
-    	}catch(Exception e) {
-    		
-    		e.printStackTrace();
-    		System.out.println("That's not a numeric value.");
-    		
-    	}finally {
-    		
-    		
-    		System.out.println("Adios");
-    		
-    	}
+    	
     	if(Admin_menu == 1) {
     		
     		Scanner ef = new Scanner(System.in);
     		int product_menu2 = 0;
-    		
     		while(product_menu2 !=4) {
     			
     			System.out.println("Welcome to the manage product menu.");
@@ -58,7 +43,6 @@ public class Main {
         		System.out.println("3. Delete a product");
         		System.out.println("4. Exit");
         		product_menu2 = ef.nextInt();
-        		
         		
         		if(product_menu2 == 1) {
         			
@@ -85,8 +69,7 @@ public class Main {
       				   System.out.println("");
       				   System.out.println("");
         			}
-        			
-        			
+        				
         		}
         		
         		if(product_menu2 == 2) {
@@ -98,12 +81,12 @@ public class Main {
     			Scanner fi = new Scanner(System.in);
     			Scanner f2 = new Scanner(System.in);
     			Scanner f3 = new Scanner(System.in);
+    			
     			String product_name = "", name_category = "", sub_category = "", i_d = "";
     			float pr_price;
-    			
     			int cantidad1 = 0;
-    			
     			int bool = 0;
+    			
     			System.out.println("To create a new product introduce Product Name, Product Price, Category Name, Sub Category Name and Category ID");
     			System.out.println("");
     			System.out.println("Product Name : ");
@@ -121,26 +104,18 @@ public class Main {
     			System.out.println("If the product is in stock introduce 1, if it isn't introduce 0");
     			bool = f2.nextInt();
     			
-
     			if(product_name !="" && pr_price!=0 && name_category!="" && sub_category!="" && i_d!="" && (bool ==1 || bool ==0)) {
     			
     				if(bool == 1) {
     					
-    					list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d,true,false,cantidad1,0));
-    					
+    					list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d,true,false,cantidad1,0));		
     				}
     				else {
     					
     					list1Product.add(new Product(pr_price,product_name,name_category, sub_category, i_d,false,false,cantidad1,0));
-    					
-    					
     				}
-    				
-    				
-    			
-    			
     			}
-	
+    			
         		}
         		
         		if(product_menu2 == 3) {
@@ -153,21 +128,14 @@ public class Main {
     				delete_product = delete_product -1;
     			
     				list1Product.remove(delete_product);
- 
-        		}
-        		
-
+        		}	
     		}
-    		
-    		
     	}
     	
     	if(Admin_menu==2) {
     		
     		Scanner az = new Scanner(System.in);
-    		
     		int admin_menu_2 = 0;
-    		
     		while(admin_menu_2 != 4) {
     			
     		System.out.println("Welcome to the manage category menu.");
@@ -179,7 +147,6 @@ public class Main {
     		admin_menu_2 = az.nextInt();
     		
     		if(admin_menu_2 == 2) {
-    			
     			
     			Scanner fg = new Scanner(System.in);
     			Scanner fl = new Scanner(System.in);
@@ -201,7 +168,6 @@ public class Main {
     			list1Category.add(new Category(name_category, sub_category, i_d ));
     			
     			}
-    			
     		}
     		
     		if(admin_menu_2 == 1) {
@@ -218,7 +184,6 @@ public class Main {
       				   System.out.println("");
       				   
         		}
-	
     		}
     		
     		if(admin_menu_2 == 3) {
@@ -232,26 +197,15 @@ public class Main {
     			list1Category.remove(delete_number);
     			
     			
+    		}	
     		}
-    		
-    		
-    		
-    		
-    		
-    		}
-    		
-    		
-     }
-    		
-    	}
-    	
-        	
+     }		
+    	}	  	
     }
     
     void start() {
 		
 		boolean passwor = false;
-		
 		if(user_menu == false) {
 		
 		Scanner sc = new Scanner(System.in);
@@ -267,7 +221,6 @@ public class Main {
 		Scanner se = new Scanner(System.in);
 		
 		String proof = "";
-		
 		while(!passwor) {
 		
 		System.out.println("Introduce a password: ");
@@ -283,14 +236,11 @@ public class Main {
 			user_menu = true;
 			break;
 		}
-		
 		}
-		
 		}
 		
 		if(user_menu2) {
-			
-			
+				
 			while(user_menu2) {
 			
 			Scanner dp = new Scanner(System.in);
@@ -310,28 +260,19 @@ public class Main {
 				
 				user_menu2 = false;
 				
-				}
-				
+				}	
 			}else {
-				
 				
 				user_menu2 = true;
 				
-			}
-			
-			
+			}	
 		}
-		
 		}
-		
-		
 	}
     
     void user_menu() {
 		
-		
     	String n_user, ma_il, contri;
-    	
     	int number_menu = 0;
     	
     	while(number_menu != 3) {
@@ -415,8 +356,7 @@ public class Main {
     	}
 		
 	}
-    
-    
+       
     
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -434,15 +374,11 @@ public class Main {
 	        mal = email;
 	        na = username;
 	        pass = password;
-	        
-	      
-	        
+
 	       }catch (Exception e) {;
 	       
-	       e.printStackTrace();
-	       
+	       e.printStackTrace();	       
 	       }
-		
 		
 		Scanner a = new Scanner(System.in);
 		
@@ -460,7 +396,6 @@ public class Main {
 	    	list1Category.add(new Category("Clothes and complements", "T Shirts", "10022"));
 	    	list1Category.add(new Category("Clothes and complements", "Pants", "1002"));
 	    	
-	    	//int c,int cc
 	    	
 	    	list1Product.add(new Product(11, "Swimming Glasses","Sports", "Swimming", "10011",true,false,10,0));
 	    	list1Product.add(new Product(10, "Velax swimsuit","Sports","Swimming", "10012",true,false,10,0));
@@ -491,7 +426,7 @@ public class Main {
 	    	list1Product.add(new Product(25, "Shorts","Clothes and complements" , "Pants", "10011",true,false,10,0));
 	    	list1Product.add(new Product(11, "Big Pants","Clothes and complements" , "Pants", "10011",true,false,10,0));
 	    	
-		
+		try {
 		while(origin!=3){
 			
 		System.out.println("User or Administrator.");
@@ -526,10 +461,8 @@ public class Main {
 			
 			if(menu2 == 1) {
 				
-				pract.user_menu();
-				
+				pract.user_menu();	
 			}
-			
 			
 			if(menu2 == 2) {
 				
@@ -580,14 +513,9 @@ public class Main {
    				   System.out.println("");
    				   System.out.println("");
    				   
-					}
-   				   
+					}	   
      			}
-								
-	
 			}
-			
-			
 			if(menu2 == 3) {
 				
 				System.out.println("Categories : ");
@@ -602,10 +530,8 @@ public class Main {
 	      				   
 	      				   System.out.println("");
 				
-				 }
-				
+				 }	
 			}
-			
 			if(menu2 == 4) {
 				
 				int menu2dollar;
@@ -618,11 +544,9 @@ public class Main {
 				
 				System.out.println("The price in dollars is : "+ Product.dolar(list1Product.get(menu2dollar).price) );
 				System.out.println("");
-				
-				
+								
 			}
-			
-			
+
 			if(menu2 == 5) {
 				
 				Scanner buy = new Scanner(System.in);
@@ -644,28 +568,27 @@ public class Main {
 						Scanner hu = new Scanner(System.in);
 						int buy1 = 0;
 						
-						//list1Product.get(menu2dollar).price
-						
 						System.out.println("Introduce the number of the product that you want to buy.");
 						buy1 = hu.nextInt();
 						buy1 = buy1-1;
 						
-						if(list1Product.get(buy1).stock && list1Product.get(buy1).getCantidad()!=0&& buy1!=0  ) {
+						if(list1Product.get(buy1).stock && list1Product.get(buy1).getCantidad()!=0 && buy1>=0  ) {
 							
 							int canty = 0;
 							Scanner dy = new Scanner(System.in);
 							System.out.println("How many products do you want ?");
 							canty = dy.nextInt();
 							
-							if(canty <= list1Product.get(buy1).getCantidad()&& canty!=0) {
+							if(canty!=0) {
+							
+							if(canty <= list1Product.get(buy1).getCantidad()) {
 								
 								int cant = list1Product.get(buy1).getCantidad() - canty;
 								int cantc =  list1Product.get(buy1).getCantidadcomprados() + canty;
 								list1Product.get(buy1).setCompra(true);
 								list1Product.get(buy1).setCantidad(cant);
 								list1Product.get(buy1).setCantidadcomprados(cantc);
-								
-								
+									
 							}else {
 								
 								System.out.println("Sorry, there are only : "+ list1Product.get(buy1).getCantidad());
@@ -675,15 +598,13 @@ public class Main {
 							
 						}else {
 							
+							System.out.println("You can´t buy 0 products.");
+						}	
+				}else {
 							System.out.println("The product isn't in Stock");
-							System.out.println("");
-
+							System.out.println("");	
 						}
-							
-							
-						
 					}
-					
 					
 					if(buymenu == 2) {
 						
@@ -728,11 +649,12 @@ public class Main {
 								
 								System.out.println("How many products do you want to remove?");
 								productcant = ft.nextInt();
+								int producty = productcant;
 								productcant = list1Product.get(product_1).getCantidadcomprados() - productcant;
-								if(productcant>list1Product.get(product_1).getCantidadcomprados()) {
+								if(producty>list1Product.get(product_1).getCantidadcomprados()) {
 									
 									System.out.println("There are only : "+ list1Product.get(product_1).getCantidadcomprados());
-	
+									break;
 								}
 								
 							}else {
@@ -754,39 +676,43 @@ public class Main {
 						
 					}
 					
-					
 					if(buymenu == 3) {
 						
 						float total_price = 0;
-
+						boolean compri = false;
 						
 						System.out.println("---------------------------------------------------------------");
 						System.out.println("Products that you buy:");
 						System.out.println("");
 						System.out.println("");
 						
-						
-						
-						for (int i = 0; i <= list1Product.size() - 1; i++) {
+					for (int i = 0; i <= list1Product.size() - 1; i++) {
 
    				   if(list1Product.get(i).compra) {
-					   
+					    compri = true;
 					    System.out.println(i+1 + "Product :"); 
 					    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
    				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
 					   
    				   		total_price = total_price + list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
    				   		
-				   }
-
-     			         }
+				           }
+     			 }
 						
+					if(compri) {
+					
 						System.out.println("");
 						System.out.println("The total price is : " + total_price+"€");
+						System.out.println("");
 						
+					}else {
+						
+						System.out.println("You didn´t buy anything yet.");
+						System.out.println("");
 					}
 					
 					
+					}
 					
 					if(buymenu == 4) {
 						
@@ -802,7 +728,7 @@ public class Main {
 						if(path == 1) {
 							
 							System.out.println("The ticket of your buy is in your Desktop.");
-							
+							System.out.println("");
 						}
 						
 						if(path == 2) {
@@ -859,9 +785,7 @@ public class Main {
 								
 							
 								tprice = tprice +  list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
-								
-								
-								
+
 								}
 							}
 							tpriceiva = (float) (tprice * 0.21);
@@ -923,7 +847,11 @@ public class Main {
 	
 		}
 		
-		}
+		}}catch (Exception e) {;
+	       
+	       e.printStackTrace();
+	       System.out.println("Invalid input.");
+	       }
 		
 		System.out.println("Goodbye");
 		System.out.println("");

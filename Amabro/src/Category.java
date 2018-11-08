@@ -12,8 +12,6 @@ public class Category {
 		IdCategory = IC;
 	
 	}
-
-
 	protected String getNameCategory() {
 		return NameCategory;
 	}

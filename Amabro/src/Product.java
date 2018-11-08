@@ -9,6 +9,7 @@ public class Product extends Category{
 	
 	
 	protected Product(float Price,String nameproduct,String NC, String SC, String IC, boolean sto,boolean comp,int c,int cc) {
+		
 		super(NC,SC,IC);
 		price = Price;
 		NameProduct = nameproduct;
@@ -32,7 +33,6 @@ public class Product extends Category{
 	void setCompra(boolean compr) {
 		compra = compr;
 	}
-	
 	
 	protected int getCantidadcomprados() {
 		return cantidadcomprados;

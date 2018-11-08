@@ -1,8 +1,8 @@
 public class User {
 
-	static protected String name;
-	static protected String email;
-	static protected String password;
+	static private String name;
+	static private String email;
+	static private String password;
 	
 	protected User(String Name, String Email, String Password) {
 		
