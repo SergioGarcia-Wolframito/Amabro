@@ -23,11 +23,11 @@ Once we have entered the data that is detailed in the "config", it will take us 
 
 Where we will have the option to manage : 
 
--Products :
+- Products :
 
 ![](Amabro%20Screenshots/AdminProduct.PNG)
 
--Categories:
+- Categories:
 
 ![](Amabro%20Screenshots/AdminCategories.PNG)
 
