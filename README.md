@@ -1,14 +1,13 @@
 # Amabro
 Amabro, is the name of my project.
 
-- INTRODUCTION : 
+## INTRODUCTION : 
 
 It consists in a kind of online store quite simple, in which first, you have two options, enter as User or Administrator.
 
 ![](Amabro%20Screenshots/Menu.PNG)
 
-
-- ADMINISTRATOR
+## ADMINISTRATOR
 
 -When we choose the Administrator option, it will ask us to enter a UserName, Email and Password, which will be detailed in the "config" file, if you do not enter the same data, Amabro closes automatically.
 
