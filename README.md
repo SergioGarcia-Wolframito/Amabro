@@ -84,6 +84,7 @@ Where you can do many things, like :
 -Buy a Product.
 
 ![](Amabro%20Screenshots/BuyMenu1.PNG)
+
 Where you can buy a product and chose the amount.
 
 -Dont buy a Product.
