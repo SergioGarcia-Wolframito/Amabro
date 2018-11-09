@@ -9,7 +9,7 @@ It consists in a kind of online store quite simple, in which first, you have two
 
 ## ADMINISTRATOR
 
-When you choose the Administrator option, it will ask us to enter a UserName, Email and Password, which will be detailed in the "config" file, if you do not enter the same data, Amabro closes automatically.
+When you choose the Administrator option, it will ask us to enter an UserName, Email and Password, which will be detailed in the "config" file, if you do not enter the same data, Amabro closes automatically.
 
 
 
@@ -37,11 +37,25 @@ Products and Categories are two independent lists, and you can add, delete and r
 
 ## USER
 
-When you choose the User option,it will ask you to enter a UserName, Email and Password and as a security measure, Amabro will ask you for the password again, and until the two do not match, the user will not have access to it.
+When you choose the User option, it will ask you to enter a UserName, Email and Password and as a security measure, Amabro will ask you for the password again, and until the two do not match, the user will not have access to it.
 
 ![](Amabro%20Screenshots/User1.PNG)
 
-Once you are inside the user menu you can see that there are 4 useful options, Account, from where the user can edit his UserName, his Email and his Password, and at the same time he will have the option to see his user data, except the password, for security measures.
+Once you are inside the user menu you can see that there are 5 useful options:
+
+
+![](Amabro%20Screenshots/Usermenu.PNG)
+
+
+- Account: 
+
+![](Amabro%20Screenshots/UserAccount.PNG)
+
+
+Where the user can edit his UserName, his Email and his Password, and at the same time you will have the option to see your user data, except the password, for security measures.
+
+
+
 
 The other three options will be directly related to the store concept, since from them we can access the products, the categories and the fourth option where entering the number of a product, they can change their price in dollars to dollars.
 
