@@ -47,12 +47,37 @@ Once you are inside the user menu you can see that there are 5 useful options:
 ![](Amabro%20Screenshots/UserMenu.PNG)
 
 
-- Account: 
+- 1. ccount: 
 
 ![](Amabro%20Screenshots/UserAccount.PNG)
 
 
 Where the user can edit his UserName, his Email and his Password, and at the same time you will have the option to see your user data, except the password, for security measures.
+
+- 2. roducts:
+
+![](Amabro%20Screenshots/UserProduct1.PNG)
+
+Where the user can see the Categories of Amabro and introduce the number of the Categorie to see the Products that are inside.
+
+![](Amabro%20Screenshots/UserProduct2.PNG)
+
+- 3. ategories :
+
+![](Amabro%20Screenshots/UserProduct1.PNG)
+
+Where the user can see the Categories of Amabro.
+
+- 4. hange Product price to Dollars : 
+
+![](Amabro%20Screenshots/Dollars.PNG)
+
+Where introducing the number of a Product it will show you the price in Dollars.
+
+
+- 5. Buy Menu :
+
+![](Amabro%20Screenshots/BuyMenu.PNG)
 
 
 
