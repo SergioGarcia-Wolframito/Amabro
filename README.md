@@ -17,10 +17,22 @@ It consists in a kind of online store quite simple, in which first, you have two
 
 Once we have entered the data that is detailed in the "config", it will take us to the Administrator menu.
 
+
 ![](Amabro%20Screenshots/AdminMenu.PNG)
 
 
-Where we will have the option to manage the Products and the Categories, they are two independent lists, and we can add, delete and read the data of each list.
+Where we will have the option to manage : 
+
+-Products :
+
+![](Amabro%20Screenshots/AdminProduct.PNG)
+
+-Categories:
+
+![](Amabro%20Screenshots/AdminCategories.PNG)
+
+
+Products and Categories are two independent lists, and you can add, delete and read the data of each list using the options in the admin menu.
 
 
 -When we choose the User option,it will ask you to enter a UserName, Email and Password and as a security measure, Amabro will ask you for the password again, and until the two do not match, the user will not have access to it.
