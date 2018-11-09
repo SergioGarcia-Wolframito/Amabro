@@ -44,7 +44,7 @@ When you choose the User option, it will ask you to enter a UserName, Email and 
 Once you are inside the user menu you can see that there are 5 useful options:
 
 
-![](Amabro%20Screenshots/Usermenu.PNG)
+![](Amabro%20Screenshots/UserMenu.PNG)
 
 
 - Account: 
