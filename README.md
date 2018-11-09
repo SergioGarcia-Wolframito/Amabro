@@ -15,7 +15,7 @@ It consists in a kind of online store quite simple, in which first, you have two
 
 
 
-Once we have entered the data that is detailed in the "config", it will take us to the Administrator menu.
+- Once we have entered the data that is detailed in the "config", it will take us to the Admin menu.
 
 
 ![](Amabro%20Screenshots/AdminMenu.PNG)
