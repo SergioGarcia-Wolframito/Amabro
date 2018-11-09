@@ -1,9 +1,15 @@
 # Amabro
 Amabro, is the name of my project.
 
-It consists of a kind of online store quite simple, in which first, you have two options, enter as User or Administrator.
+It consists in a kind of online store quite simple, in which first, you have two options, enter as User or Administrator.
+
+![](Amabro%20Screenshots/Menu.PNG)
+
 
 - When we choose the Administrator option, it will ask us to enter a UserName, Email and Password, which will be detailed in the "config" file, if you do not enter the same data, Amabro closes automatically.
+
+
+
 
 Once we have entered the data that is detailed in the "config", it will take us to the Administrator menu, from where we will have the option to manage the Products and the Categories, they are two independent lists, and we can add, delete and read the data of each list.
 
@@ -17,4 +23,4 @@ The other three options will be directly related to the store concept, since fro
 
 This is a simple explanation of what Amabro does, it is a project that has a lot to improve and a lot to offer.
 
-![](Amabro%20Screenshots/Menu.PNG)
+
