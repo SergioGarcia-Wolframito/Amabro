@@ -18,6 +18,7 @@ public class Main {
 	
 	static boolean user_menu = false;
 	static boolean user_menu2 = false;
+	@SuppressWarnings({"resource"})
 	
     void Administrator() {
     	
@@ -33,7 +34,8 @@ public class Main {
     	
     	if(Admin_menu == 1) {
     		
-    		Scanner ef = new Scanner(System.in);
+    	
+			Scanner ef = new Scanner(System.in);
     		int product_menu2 = 0;
     		while(product_menu2 !=4) {
     			
@@ -203,6 +205,7 @@ public class Main {
     	}	  	
     }
     
+	@SuppressWarnings({"resource", "unused"})
     void start() {
 		
 		boolean passwor = false;
@@ -231,6 +234,7 @@ public class Main {
 		
 		if(contra.equals(proof)) {
 			passwor = true;
+			
 			User Usuario = new User(usuario, mail, contra);
 			
 			user_menu = true;
@@ -270,6 +274,7 @@ public class Main {
 		}
 	}
     
+	@SuppressWarnings({"resource"})
     void user_menu() {
 		
     	String n_user, ma_il, contri;
@@ -357,7 +362,7 @@ public class Main {
 		
 	}
        
-    
+	@SuppressWarnings({"resource", "unused"})
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -427,7 +432,7 @@ public class Main {
 	    	list1Product.add(new Product(11, "Big Pants","Clothes and complements" , "Pants", "10011",true,false,10,0));
 	    	
 		try {
-		while(origin!=3){
+		while(origin!=4){
 			
 		System.out.println("User or Administrator.");
 		System.out.println("1.User");
@@ -740,8 +745,6 @@ public class Main {
 							
 						}
 						
-						FileReader leer = null;
-						FileWriter escribir = null;
 						
 						String jump = "\r\n";
 						String space = "\t";
@@ -840,10 +843,27 @@ public class Main {
 		        	
 		        }else {
 		        	
-		        	origin = 3;
+		        	origin = 4;
 		        }	
 		}
+		
+		if(origin == 3) {
+			int ex = 0;
+			Scanner yf = new Scanner(System.in);
+			System.out.println("Are you sure that you want to go out of Amabro? ");
+			System.out.println("1 = Yes");
+			System.out.println("Else = No");
+			ex = yf.nextInt();
+			if(ex == 1) {
+				
+				origin = 4;
+				
+			}
+		}
+		
 		else{	
+			
+			
 	
 		}
 		
@@ -852,6 +872,8 @@ public class Main {
 	       e.printStackTrace();
 	       System.out.println("Invalid input.");
 	       }
+		
+		
 		
 		System.out.println("Goodbye");
 		System.out.println("");

@@ -1,6 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
 
 class ProductTest {
@@ -8,7 +8,6 @@ class ProductTest {
 	@Test
 	void test() {
 		
-		//float Price,String nameproduct,String NC, String SC, String IC, boolean sto,boolean comp,int c,int cc
 		Product product = new Product(0, "Xiaomi Mi 8","Tecnology", "MobilePhone", "15002", false,false,10,0);
 		
 		assertEquals(product.getPrice(),0);
