@@ -1,6 +1,8 @@
 # Amabro
 Amabro, is the name of my project.
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/SergioGarcia-Wolframito/practica_1?branch=master)](https://bettercodehub.com/)
+
 
 ![Build Status](https://travis-ci.com/SergioGarcia-Wolframito/Practica1.svg?token=4pzWBqKxhzCcdeSq886z&branch=master)
 
