@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 
 
+
 import java.util.ArrayList;
 import java.util.Properties;
 public class Main {
@@ -29,11 +30,15 @@ public class Main {
     	Scanner am = new Scanner(System.in);
     	int Admin_menu = 0;
     	while (Admin_menu!=3) {
+    		
+    		HellowWorldi18n.translate();
+
+    	System.out.println(HellowWorldi18n.getSring5());
+    	System.out.println("1."+ HellowWorldi18n.getSring6());
+    	System.out.println("2."+ HellowWorldi18n.getSring7());
+    	System.out.println("3."+ HellowWorldi18n.getSringexir());  
+    	System.out.println(HellowWorldi18n.getSring4());
     	
-    	System.out.println("Welcome to the admin menu.");
-    	System.out.println("1. Manage products");
-    	System.out.println("2. Manage categories and sub categories");
-    	System.out.println("3. Exit");      	
     	Admin_menu = am.nextInt();
     	
     	if(Admin_menu == 1) {
@@ -284,12 +289,13 @@ public class Main {
 	}
     
 	@SuppressWarnings({"resource"})
+	
     void user_menu() {
 		
     	String n_user, ma_il, contri;
     	int number_menu = 0;
     	
-    	while(number_menu != 3) {
+    	while(number_menu != 4) {
 			
 			Scanner nm = new Scanner(System.in);
 			System.out.println("");
@@ -297,7 +303,8 @@ public class Main {
 			System.out.println("");
 			System.out.println("1. Account settings. ");
 			System.out.println("2. Account info.");
-			System.out.println("Introduce the number 3 to go back. ");
+			System.out.println("3. Change lenguage.");
+			System.out.println("Introduce the number 4 to go back. ");
 			System.out.println("");
 			System.out.println("Introduce the number of the option. ");
 			number_menu = nm.nextInt();
@@ -364,6 +371,44 @@ public class Main {
 			System.out.println("Email of the account: " + mainproxy.getMainEmail());
 			
 		}
+		
+		
+		case 3:
+			int lenguage = 0;
+			Scanner len = new Scanner(System.in);
+			System.out.println("Select a lenguage");
+			System.out.println("1. English");
+			System.out.println("2. Español");
+			System.out.println("3. Francais");
+			lenguage = len.nextInt();
+			
+			if(lenguage == 1) {
+				
+				HellowWorldi18n.setCountry("US");
+				HellowWorldi18n.setLanguage("en");
+				
+			}
+
+			if(lenguage == 2) {
+				
+				HellowWorldi18n.setCountry("ES");
+				HellowWorldi18n.setLanguage("es");
+				
+			}
+			
+			if(lenguage == 3) {
+				
+				HellowWorldi18n.setCountry("FR");
+				HellowWorldi18n.setLanguage("fr");
+				
+			}
+			
+			if(lenguage !=1 && lenguage != 2 && lenguage!=3) {
+				
+				System.out.println("Invalid option.");
+				
+			}
+			
 				
 		}
 		
@@ -443,12 +488,14 @@ public class Main {
 		try {
 		while(origin!=4){
 			
-		System.out.println("User or Administrator.");
-		System.out.println("1.User");
-		System.out.println("2.Administrator");
-		System.out.println("3.Go out");
+			HellowWorldi18n.translate();
+			
+		System.out.println(HellowWorldi18n.getSring1());
+		System.out.println("1." + HellowWorldi18n.getSring2());
+		System.out.println("2." + HellowWorldi18n.getSring3());
+		System.out.println("3." + HellowWorldi18n.getSringexir());
 		System.out.println("");
-		System.out.println("Introduce the number of the option.");
+		System.out.println("" + HellowWorldi18n.getSring4());
 		origin = a.nextInt();
 		
 		if(origin == 1) {
@@ -521,9 +568,7 @@ public class Main {
 				   }else {
 					   
 					   System.out.println("The product isn't in Stock");
-
 				   }
-   				   
    				   System.out.println("");
    				   System.out.println("");
    				   
@@ -543,7 +588,6 @@ public class Main {
 	      						   + list1Category.get(i).SubCategory + " //ID:  " + list1Category.get(i).IdCategory);
 	      				   
 	      				   System.out.println("");
-				
 				 }	
 			}
 			if(menu2 == 4) {
@@ -554,7 +598,6 @@ public class Main {
 				System.out.println("Introduce the number of the product that you want to see the price in Dollars.");
 				menu2dollar = hg.nextInt();
 				menu2dollar = menu2dollar -1;
-				
 				
 				System.out.println("The price in dollars is : "+ Product.dolar(list1Product.get(menu2dollar).price) );
 				System.out.println("");

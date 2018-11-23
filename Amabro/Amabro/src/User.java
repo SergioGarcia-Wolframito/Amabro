@@ -21,18 +21,21 @@ public class User implements ProxyInterface{
 		
 		return password;
 	}
+	@SuppressWarnings("static-access")
 	@Override
 	public void setMainName(String name) {
 		
 		this.name = name;
 		
 	}
+	@SuppressWarnings("static-access")
 	@Override
 	public void setMainEmail(String email) {
 		
 		this.email = email;
 		
 	}
+	@SuppressWarnings("static-access")
 	@Override
 	public void setMainPassword(String password) {
 		
