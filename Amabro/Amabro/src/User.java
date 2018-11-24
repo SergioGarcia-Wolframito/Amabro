@@ -21,6 +21,7 @@ public class User implements ProxyInterface{
 		
 		return password;
 	}
+	
 	@SuppressWarnings("static-access")
 	@Override
 	public void setMainName(String name) {

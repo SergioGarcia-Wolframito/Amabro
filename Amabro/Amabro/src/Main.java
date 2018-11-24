@@ -7,31 +7,31 @@ import java.util.Scanner;
 
 
 
-
 import java.util.ArrayList;
 import java.util.Properties;
+
+
 public class Main {
 	
 	static MainProxy mainproxy = new MainProxy();
 
 	private static int Category_Number;
 	static Main pract = new Main();
-	static String mal,na,pass;
-	static String mail = "",usuario = "",contra = "";
+	static String mail = "",usuario = "",contra = "",mal,na,pass;
 	static List <Category> list1Category = new ArrayList <Category>();
 	static List <Product> list1Product = new ArrayList<Product>();
-	static boolean user_menu = false;
-	static boolean user_menu2 = false;
+	static boolean user_menu = false, user_menu2 = false;
+	
 	
 	@SuppressWarnings({"resource"})
 	
-    void Administrator() {
+    private void Administrator() {
     
     	Scanner am = new Scanner(System.in);
     	int Admin_menu = 0;
     	while (Admin_menu!=3) {
     		
-    		HellowWorldi18n.translate();
+    	HellowWorldi18n.translate();
 
     	System.out.println(HellowWorldi18n.getSring5());
     	System.out.println("1."+ HellowWorldi18n.getSring6());
@@ -215,10 +215,10 @@ public class Main {
     }
     
 	@SuppressWarnings({"resource", "unused"})
-    void start() {
+	private void start() {
 		
 		boolean passwor = false;
-		if(user_menu == false) {
+		if(!user_menu) {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -243,12 +243,10 @@ public class Main {
 		
 		if(contra.equals(proof)) {
 			passwor = true;
-			
-			
-			
+
 			mainproxy.setMainName(usuario);
 			mainproxy.setMainEmail(mail);
-			mainproxy.setMainEmail(contra);
+			mainproxy.setMainPassword(contra);
 			
 			
 			user_menu = true;
@@ -272,18 +270,20 @@ public class Main {
 			System.out.println("Introduce the password.");
 			pass = df.nextLine();
 			
-			if((user2.equals(mainproxy.getMainName()) ||user2.equals(mainproxy.getMainEmail()) )) {
+			if((user2.equals(mainproxy.getMainName()) || user2.equals(mainproxy.getMainEmail()) )) {
 				
 				if(pass.equals(mainproxy.getMainPassword())) {
 				
 				user_menu2 = false;
 				
-				}	
+				}
+				
 			}else {
 				
 				user_menu2 = true;
 				
 			}	
+			
 		}
 		}
 	}
@@ -369,11 +369,15 @@ public class Main {
 			System.out.println("User name of the account: " + mainproxy.getMainName());
 			System.out.println("");
 			System.out.println("Email of the account: " + mainproxy.getMainEmail());
+			break;
 			
 		}
 		
 		
 		case 3:
+			
+		{
+			
 			int lenguage = 0;
 			Scanner len = new Scanner(System.in);
 			System.out.println("Select a lenguage");
@@ -409,21 +413,364 @@ public class Main {
 				
 			}
 			
-				
+			break;
+		}
+		
 		}
 		
     	}
 		
 	}
-       
+     
+	@SuppressWarnings("resource")
+	private void file() {
+		
+
+		
+		String ruta = "C:/Users/sergi/Desktop/TicketAmabro.txt";
+		
+		int path = 0;
+		Scanner tr = new Scanner(System.in);
+		System.out.println("Introduce the option.");
+		System.out.println("1. Predeterminated Path.");
+		System.out.println("2. Other Path");
+		path = tr.nextInt();
+		
+		if(path == 1) {
+			
+			System.out.println("The ticket of your buy is in your Desktop.");
+			System.out.println("");
+		}
+		
+		if(path == 2) {
+			Scanner tx = new Scanner(System.in);
+			String newpath;
+			System.out.println("Introduce the new Path.");
+			newpath = tx.nextLine();
+			ruta = newpath;
+			
+		}
+		
+		
+		String jump = "\r\n";
+		String space = "\t";
+		
+		
+		try {
+
+			File f = new File(ruta);
+			
+			
+			if(f.exists()) {
+				
+				f.delete();
+				f.createNewFile();
+				
+			}
+			
+			FileWriter f2 = new FileWriter(f, true);
+			
+			float tprice = 0;
+			float tpriceiva =  0;
+			
+			f2.write("\t \t \t \t AMABRO BUY TICKET ");
+			f2.write(jump);
+			f2.write(jump);
+
+			for(int i = 0;i<list1Product.size();i++) {
+				
+				if(list1Product.get(i).compra) {
+				f2.write(jump);
+				f2.write("-------------------------------------");
+				f2.write(jump);
+				f2.write(i+1 + "Product -->");
+				f2.write(jump);
+				f2.write("Number of Products : "+list1Product.get(i).getCantidadcomprados());
+				f2.write(space);
+				f2.write("Product Name :" + list1Product.get(i).NameProduct);
+				f2.write(space);
+				f2.write("Price :" + list1Product.get(i).price+"€");
+				f2.write(jump);
+				
+			
+				tprice = tprice +  list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
+
+				}
+			}
+			tpriceiva = (float) (tprice * 0.21);
+			float jony = tpriceiva + tprice;
+			f2.write(jump);
+			f2.write(jump);
+			f2.write("Total Price : " + (int) tprice+"€");
+			f2.write(jump);
+			f2.write("Total Price + IVA : " + jony+"€");
+			f2.write(jump);
+			f2.write("IVA = 21%");
+			f2.close();
+
+		} catch (IOException e) {
+			// 
+			e.printStackTrace();
+		}
+		
+
+	
+		
+		
+	}
+	
+	private void user_categories() {
+		
+
+		
+		System.out.println("Categories : ");
+		System.out.println("");
+		System.out.println("---------------------------------------------------------------");
+		
+		 for (int i = 0; i <= list1Category.size() - 1; i++) {
+
+				   System.out.println(i+1 + "Category :"); 
+  				   System.out.println("//Name Category:  " + list1Category.get(i).NameCategory + " //SubCategory:  "
+  						   + list1Category.get(i).SubCategory + " //ID:  " + list1Category.get(i).IdCategory);
+  				   
+  				   System.out.println("");
+		 }	
+	
+		
+	}
+	
+	
+	private void user_products() {
+
+		
+		
+
+		
+		Scanner dr = new Scanner(System.in);
+		System.out.println("List of Categories :");
+		
+		System.out.println("");
+		System.out.println("---------------------------------------------------------------");
+		
+		for (int i = 0; i <= list1Category.size() - 1; i++) {
+
+			   System.out.println(i+1 + "Category :"); 
+			   System.out.println("//Name Category:  " + list1Category.get(i).NameCategory + " //SubCategory:  "
+					   + list1Category.get(i).SubCategory + " //ID:  " + list1Category.get(i).IdCategory);
+			   
+			   
+			   System.out.println("");
+	
+		}
+		
+		System.out.println("");
+		System.out.println("Introduce the number of the category.");
+		Category_Number = dr.nextInt();
+		
+		Category_Number = Category_Number -1;
+		
+		String hola = list1Category.get(Category_Number).NameCategory;
+		
+		System.out.println("");
+		System.out.println("---------------------------------------------------------------");
+		
+		for (int i = 0; i <= list1Product.size() - 1; i++) {
+            
+			if(hola.equals(list1Product.get(i).NameCategory)) {
+			
+			   System.out.println(i+1 + "Product :"); 
+			   System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price);
+			   if(list1Product.get(i).stock) {
+			   
+			   System.out.println("The product is in Stock");
+			   
+		   }else {
+			   
+			   System.out.println("The product isn't in Stock");
+		   }
+			   System.out.println("");
+			   System.out.println("");
+			   
+			}	   
+			}
+	
+		
+		
+	}
+	
+	private void buymenu_1() {
+		
+
+		
+		Scanner hu = new Scanner(System.in);
+		int buy1 = 0;
+		
+		System.out.println("Introduce the number of the product that you want to buy.");
+		buy1 = hu.nextInt();
+		buy1 = buy1-1;
+		
+		if(list1Product.get(buy1).stock && list1Product.get(buy1).getCantidad()!=0 && buy1>=0  ) {
+			
+			int canty = 0;
+			Scanner dy = new Scanner(System.in);
+			System.out.println("How many products do you want ?");
+			canty = dy.nextInt();
+			
+			if(canty!=0) {
+			
+			if(canty <= list1Product.get(buy1).getCantidad()) {
+				
+				int cant = list1Product.get(buy1).getCantidad() - canty;
+				int cantc =  list1Product.get(buy1).getCantidadcomprados() + canty;
+				list1Product.get(buy1).setCompra(true);
+				list1Product.get(buy1).setCantidad(cant);
+				list1Product.get(buy1).setCantidadcomprados(cantc);
+					
+			}else {
+				
+				System.out.println("Sorry, there are only : "+ list1Product.get(buy1).getCantidad());
+				System.out.println("");
+			}
+			
+			
+		}else {
+			
+			System.out.println("You can´t buy 0 products.");
+		}	
+		}else {
+			System.out.println("The product isn't in Stock");
+			System.out.println("");	
+		}
+	
+		
+		
+	}
+	
+	private void buymenu_2() {
+
+		
+		Scanner hj = new Scanner(System.in);
+		int product_1;
+		int pr;
+		
+		System.out.println("Buy products: ");
+		System.out.println("");
+		
+		for (int i = 0; i <= list1Product.size() - 1; i++) {
+
+				   if(list1Product.get(i).compra) {
+				   
+				    System.out.println(i+1 + "Product :");
+				    System.out.println("Number of Products : "+list1Product.get(i).getCantidadcomprados());
+				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
+				   	
+			   }
+
+ 		}
+	
+		System.out.println("");
+		System.out.println("");
+		Scanner wr = new Scanner(System.in);
+		
+		System.out.println("If you want to remove a product from the cart introduce 1.");
+		System.out.println("");
+		pr = wr.nextInt();
+		if(pr == 1) {
+			
+			System.out.println("Introduce the number of the product you want to remove.");
+			product_1 = hj.nextInt();
+			product_1 = product_1-1;
+			
+			
+			int productcant = 0;
+			
+			
+			if(list1Product.get(product_1).getCantidadcomprados() != 1) {
+				Scanner ft = new Scanner(System.in);
+				
+				System.out.println("How many products do you want to remove?");
+				productcant = ft.nextInt();
+				int producty = productcant;
+				productcant = list1Product.get(product_1).getCantidadcomprados() - productcant;
+				if(producty>list1Product.get(product_1).getCantidadcomprados()) {
+					
+					System.out.println("There are only : "+ list1Product.get(product_1).getCantidadcomprados());
+					
+				}
+				
+			}else {
+				
+				productcant = list1Product.get(product_1).getCantidadcomprados()-1;
+			}
+			
+			
+
+			list1Product.get(product_1).setCantidadcomprados(productcant);
+			
+			if(list1Product.get(product_1).getCantidadcomprados() == 0) {
+				
+			list1Product.get(product_1).setCompra(false);
+			
+			}
+			
+		}
+		
+	
+		
+	}
+	
+	
+	private void buymenu_3() {
+		
+
+		
+		float total_price = 0;
+		boolean compri = false;
+		
+		System.out.println("---------------------------------------------------------------");
+		System.out.println("Products that you buy:");
+		System.out.println("");
+		System.out.println("");
+		
+			for (int i = 0; i <= list1Product.size() - 1; i++) {
+
+					if(list1Product.get(i).compra) {
+							compri = true;
+				System.out.println(i+1 + "Product :"); 
+			    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
+			   	System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
+			   
+			   		total_price = total_price + list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
+			   		
+		           }
+			 }
+				
+			if(compri) {
+			
+				System.out.println("");
+				System.out.println("The total price is : " + total_price+"€");
+				System.out.println("");
+				
+			}else {
+				
+				System.out.println("You didn´t buy anything yet.");
+				System.out.println("");
+			}
+			
+	
+	
+		
+		
+	}
+	
+	
 	@SuppressWarnings({"resource"})
 	public static void main(String[] args) {
-		// 
 
 		try(FileReader reader =  new FileReader("config")) {
 			
-	        Properties properties = new Properties();
-	        properties.load(reader);
+	       Properties properties = new Properties();
+	       properties.load(reader);
 	        
 	       
 	       String email = properties.getProperty("email");
@@ -509,14 +856,15 @@ public class Main {
 
 			int menu2 = 0;
 			
-			while(menu2 !=6) {
+			
+			
+			while(menu2 !=5) {
 			
 			System.out.println("1. Account");
 			System.out.println("2. Products.");
 			System.out.println("3. Categories.");
-			System.out.println("4. Change product price to dollars.");
-			System.out.println("5. Buy menu.");
-			System.out.println("6. Go out.");
+			System.out.println("4. Buy menu.");
+			System.out.println("5. Go out.");
 			System.out.println("Introduce the number of the option.");
 			menu2 = df.nextInt();
 			
@@ -527,351 +875,75 @@ public class Main {
 			
 			if(menu2 == 2) {
 				
-				Scanner dr = new Scanner(System.in);
-				System.out.println("List of Categories :");
 				
-				System.out.println("");
-    			System.out.println("---------------------------------------------------------------");
+				pract.user_products();
 				
-				for (int i = 0; i <= list1Category.size() - 1; i++) {
-
- 				   System.out.println(i+1 + "Category :"); 
-   				   System.out.println("//Name Category:  " + list1Category.get(i).NameCategory + " //SubCategory:  "
-   						   + list1Category.get(i).SubCategory + " //ID:  " + list1Category.get(i).IdCategory);
-   				   
-   				   
-   				   System.out.println("");
-			
-				}
-				
-				System.out.println("");
-				System.out.println("Introduce the number of the category.");
-				Category_Number = dr.nextInt();
-				
-				Category_Number = Category_Number -1;
-				
-				String hola = list1Category.get(Category_Number).NameCategory;
-				
-				System.out.println("");
-    			System.out.println("---------------------------------------------------------------");
-				
-				for (int i = 0; i <= list1Product.size() - 1; i++) {
-		            
-					if(hola.equals(list1Product.get(i).NameCategory)) {
-					
- 				   System.out.println(i+1 + "Product :"); 
-   				   System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price);
-   				   if(list1Product.get(i).stock) {
-					   
-					   System.out.println("The product is in Stock");
-					   
-				   }else {
-					   
-					   System.out.println("The product isn't in Stock");
-				   }
-   				   System.out.println("");
-   				   System.out.println("");
-   				   
-					}	   
-     			}
 			}
 			if(menu2 == 3) {
 				
-				System.out.println("Categories : ");
-				System.out.println("");
-    			System.out.println("---------------------------------------------------------------");
+				pract.user_categories();
 				
-				 for (int i = 0; i <= list1Category.size() - 1; i++) {
-    
-	    				   System.out.println(i+1 + "Category :"); 
-	      				   System.out.println("//Name Category:  " + list1Category.get(i).NameCategory + " //SubCategory:  "
-	      						   + list1Category.get(i).SubCategory + " //ID:  " + list1Category.get(i).IdCategory);
-	      				   
-	      				   System.out.println("");
-				 }	
 			}
+			
 			if(menu2 == 4) {
-				
-				int menu2dollar;
-				Scanner hg = new Scanner(System.in);
-				
-				System.out.println("Introduce the number of the product that you want to see the price in Dollars.");
-				menu2dollar = hg.nextInt();
-				menu2dollar = menu2dollar -1;
-				
-				System.out.println("The price in dollars is : "+ Product.dolar(list1Product.get(menu2dollar).price) );
-				System.out.println("");
-								
-			}
-
-			if(menu2 == 5) {
 				
 				Scanner buy = new Scanner(System.in);
 				int buymenu = 0;
 				
-				while(buymenu != 5) {
+				while(buymenu != 6) {
 					
 					System.out.println("1. Buy a product.");
 					System.out.println("2. Don't buy a product.");
 					System.out.println("3. Cart info.");
 					System.out.println("4. Print ticket.");
-					System.out.println("5. Exit.");
+					System.out.println("5. Change product price to dollars.");
+					System.out.println("6. Exit.");
 					System.out.println("Introduce the number of the option.");
 					buymenu = buy.nextInt();
 					
 					
 					if(buymenu == 1) {
 						
-						Scanner hu = new Scanner(System.in);
-						int buy1 = 0;
-						
-						System.out.println("Introduce the number of the product that you want to buy.");
-						buy1 = hu.nextInt();
-						buy1 = buy1-1;
-						
-						if(list1Product.get(buy1).stock && list1Product.get(buy1).getCantidad()!=0 && buy1>=0  ) {
-							
-							int canty = 0;
-							Scanner dy = new Scanner(System.in);
-							System.out.println("How many products do you want ?");
-							canty = dy.nextInt();
-							
-							if(canty!=0) {
-							
-							if(canty <= list1Product.get(buy1).getCantidad()) {
-								
-								int cant = list1Product.get(buy1).getCantidad() - canty;
-								int cantc =  list1Product.get(buy1).getCantidadcomprados() + canty;
-								list1Product.get(buy1).setCompra(true);
-								list1Product.get(buy1).setCantidad(cant);
-								list1Product.get(buy1).setCantidadcomprados(cantc);
-									
-							}else {
-								
-								System.out.println("Sorry, there are only : "+ list1Product.get(buy1).getCantidad());
-								System.out.println("");
-							}
-							
-							
-						}else {
-							
-							System.out.println("You can´t buy 0 products.");
-						}	
-				}else {
-							System.out.println("The product isn't in Stock");
-							System.out.println("");	
-						}
+						pract.buymenu_1();
 					}
 					
 					if(buymenu == 2) {
 						
-						Scanner hj = new Scanner(System.in);
-						int product_1;
-						int pr;
 						
-						System.out.println("Buy products: ");
-						System.out.println("");
-						
-						for (int i = 0; i <= list1Product.size() - 1; i++) {
-
-			   				   if(list1Product.get(i).compra) {
-								   
-								    System.out.println(i+1 + "Product :");
-								    System.out.println("Number of Products : "+list1Product.get(i).getCantidadcomprados());
-			   				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
-								   	
-							   }
-
-			     		}
-					
-						System.out.println("");
-						System.out.println("");
-						Scanner wr = new Scanner(System.in);
-						
-						System.out.println("If you want to remove a product from the cart introduce 1.");
-						System.out.println("");
-						pr = wr.nextInt();
-						if(pr == 1) {
-							
-							System.out.println("Introduce the number of the product you want to remove.");
-							product_1 = hj.nextInt();
-							product_1 = product_1-1;
-							
-							
-							int productcant = 0;
-							
-							
-							if(list1Product.get(product_1).getCantidadcomprados() != 1) {
-								Scanner ft = new Scanner(System.in);
-								
-								System.out.println("How many products do you want to remove?");
-								productcant = ft.nextInt();
-								int producty = productcant;
-								productcant = list1Product.get(product_1).getCantidadcomprados() - productcant;
-								if(producty>list1Product.get(product_1).getCantidadcomprados()) {
-									
-									System.out.println("There are only : "+ list1Product.get(product_1).getCantidadcomprados());
-									break;
-								}
-								
-							}else {
-								
-								productcant = list1Product.get(product_1).getCantidadcomprados()-1;
-							}
-							
-							
-
-							list1Product.get(product_1).setCantidadcomprados(productcant);
-							
-							if(list1Product.get(product_1).getCantidadcomprados() == 0) {
-								
-							list1Product.get(product_1).setCompra(false);
-							
-							}
-							
-						}
+						pract.buymenu_2();
 						
 					}
 					
 					if(buymenu == 3) {
 						
-						float total_price = 0;
-						boolean compri = false;
 						
-						System.out.println("---------------------------------------------------------------");
-						System.out.println("Products that you buy:");
-						System.out.println("");
-						System.out.println("");
-						
-					for (int i = 0; i <= list1Product.size() - 1; i++) {
-
-   				   if(list1Product.get(i).compra) {
-					    compri = true;
-					    System.out.println(i+1 + "Product :"); 
-					    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
-   				   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
-					   
-   				   		total_price = total_price + list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
-   				   		
-				           }
-     			 }
-						
-					if(compri) {
-					
-						System.out.println("");
-						System.out.println("The total price is : " + total_price+"€");
-						System.out.println("");
-						
-					}else {
-						
-						System.out.println("You didn´t buy anything yet.");
-						System.out.println("");
-					}
-					
+						pract.buymenu_3();
 					
 					}
 					
 					if(buymenu == 4) {
 						
-						String ruta = "C:/Users/sergi/Desktop/TicketAmabro.txt";
 						
-						int path = 0;
-						Scanner tr = new Scanner(System.in);
-						System.out.println("Introduce the option.");
-						System.out.println("1. Predeterminated Path.");
-						System.out.println("2. Other Path");
-						path = tr.nextInt();
+						pract.file();
 						
-						if(path == 1) {
-							
-							System.out.println("The ticket of your buy is in your Desktop.");
-							System.out.println("");
-						}
-						
-						if(path == 2) {
-							Scanner tx = new Scanner(System.in);
-							String newpath;
-							System.out.println("Introduce the new Path.");
-							newpath = tx.nextLine();
-							ruta = newpath;
-							
-						}
-						
-						
-						String jump = "\r\n";
-						String space = "\t";
-						
-						
-						try {
-
-							File f = new File(ruta);
-							
-							
-							if(f.exists()) {
-								
-								f.delete();
-								f.createNewFile();
-								
-							}
-							
-							FileWriter f2 = new FileWriter(f, true);
-							
-							float tprice = 0;
-							float tpriceiva =  0;
-							
-							f2.write("\t \t \t \t AMABRO BUY TICKET ");
-							f2.write(jump);
-							f2.write(jump);
-				
-							for(int i = 0;i<list1Product.size();i++) {
-								
-								if(list1Product.get(i).compra) {
-								f2.write(jump);
-								f2.write("-------------------------------------");
-								f2.write(jump);
-								f2.write(i+1 + "Product -->");
-								f2.write(jump);
-								f2.write("Number of Products : "+list1Product.get(i).getCantidadcomprados());
-								f2.write(space);
-								f2.write("Product Name :" + list1Product.get(i).NameProduct);
-								f2.write(space);
-								f2.write("Price :" + list1Product.get(i).price+"€");
-								f2.write(jump);
-								
-							
-								tprice = tprice +  list1Product.get(i).price*list1Product.get(i).getCantidadcomprados();
-
-								}
-							}
-							tpriceiva = (float) (tprice * 0.21);
-							float jony = tpriceiva + tprice;
-							f2.write(jump);
-							f2.write(jump);
-							f2.write("Total Price : " + (int) tprice+"€");
-							f2.write(jump);
-							f2.write("Total Price + IVA : " + jony+"€");
-							f2.write(jump);
-							f2.write("IVA = 21%");
-							f2.close();
-
-						} catch (IOException e) {
-							// 
-							e.printStackTrace();
-						}
-						
-	
-					}
-												
 					}
 					
-					
-					
-					
+					if(buymenu == 5) {
+						
+						int menu2dollar;
+						Scanner hg = new Scanner(System.in);
+						
+						System.out.println("Introduce the number of the product that you want to see the price in Dollars.");
+						menu2dollar = hg.nextInt();
+						menu2dollar = menu2dollar -1;
+						
+						System.out.println("The price in dollars is : "+ Product.dolar(list1Product.get(menu2dollar).price) );
+						System.out.println("");
+
+					}							
+					}		
 				}
-				
-				
 			}
-			
 			}
 
 		if(origin == 2) {
