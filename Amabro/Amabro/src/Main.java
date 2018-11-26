@@ -17,17 +17,16 @@ public class Main {
 	private static int Category_Number;
 	
 	static Main pract = new Main();
+	static Descuento_ descu = new Descuento_();
 	
 	static String mail = "",usuario = "",contra = "",mal,na,pass;
 	static List <Category> list1Category = new ArrayList <Category>();
 	static List <Product> list1Product = new ArrayList<Product>();
-	static boolean user_menu = false, user_menu2 = false;
+	static boolean user_menu = false, user_menu2 = false, coupon = false;
 	
 	@SuppressWarnings("resource")
 	private void Admin_menu1() {
-		
-
-
+				
 		Scanner ef = new Scanner(System.in);
 		int product_menu2 = 0;
 		while(product_menu2 !=4) {
@@ -38,8 +37,7 @@ public class Main {
     		System.out.println("3. Delete a product");
     		System.out.println("4. Exit");
     		product_menu2 = ef.nextInt();
-			
-    		//Allow the search of all products available on Amabro
+    		
     		if(product_menu2 == 1) {
     			
     			System.out.println("");
@@ -68,7 +66,6 @@ public class Main {
     				
     		}
     		
-		//Allow user to add a product on product list
         	if(product_menu2 == 2) {
 
         		Scanner fb = new Scanner(System.in);	
@@ -115,7 +112,6 @@ public class Main {
     			
         	}
     		
-		//Allow user delete a product from general store
         	if(product_menu2 == 3) {
         			
         			       			 
@@ -139,6 +135,7 @@ public class Main {
 		
 		Scanner az = new Scanner(System.in);
 		int admin_menu_2 = 0;
+		
 		while(admin_menu_2 != 4) {
 			
 		System.out.println("Welcome to the manage category menu.");
@@ -146,7 +143,6 @@ public class Main {
 		System.out.println("2. Add category and sub category");
 		System.out.println("3. Delete a category and sub category");
 		System.out.println("4. Exit");
-		
 		admin_menu_2 = az.nextInt();
 		
 		if(admin_menu_2 == 2) {
@@ -181,8 +177,8 @@ public class Main {
 			   for (int i = 0; i <= list1Category.size() - 1; i++) {
         
 				   System.out.println(i+1 + "Category :"); 
-  				   System.out.println("//Name Category:  " + list1Category.get(i).NameCategory + " //SubCategory:  "
-  						   + list1Category.get(i).SubCategory + " //ID:  " + list1Category.get(i).IdCategory);
+  				   System.out.println("//Name Category: " + list1Category.get(i).NameCategory + " //SubCategory: "
+  						   + list1Category.get(i).SubCategory + " //ID: " + list1Category.get(i).IdCategory);
   				   
   				   System.out.println("");
   				   
@@ -199,12 +195,9 @@ public class Main {
 			
 			list1Category.remove(delete_number);
 			
-			
 		}	
 		}
  
-		
-		
 	}
 	
 	@SuppressWarnings({"resource"})
@@ -332,7 +325,7 @@ public class Main {
 				System.out.println("1. Account settings. ");
 				System.out.println("2. Account info.");
 				System.out.println("3. Change lenguage.");
-				System.out.println("Press 4 to go back. ");
+				System.out.println("Introduce the number 4 to go back. ");
 				number_menu = nm.nextInt();
 	
 			switch(number_menu) {
@@ -347,7 +340,7 @@ public class Main {
 				System.out.println("1. Change user name.");
 				System.out.println("2. Change email.");
 				System.out.println("3. Change password.");
-				System.out.println("Press any other key to go back. ");
+				System.out.println("Introduce any other key to go back. ");
 				settings = nj.nextInt();
 				
 					switch(settings) {
@@ -408,9 +401,8 @@ public class Main {
 					Scanner len = new Scanner(System.in);
 					System.out.println("Select a lenguage");
 					System.out.println("1. English");
-					System.out.println("2. EspaÃ±ol");
-					System.out.println("3. FranÃ§ais");
-					System.out.println("4. Catalan");
+					System.out.println("2. Español");
+					System.out.println("3. Francais");
 					lenguage = len.nextInt();
 					
 					if(lenguage == 1) {
@@ -431,10 +423,6 @@ public class Main {
 						HellowWorldi18n.setLanguage("fr");
 						
 					}
-                   if(lenguage == 4) {
-						
-						HellowWorldi18n.setCountry("AR");
-						HellowWorldi18n.setLanguage("ar");
 					
 					if(lenguage !=1 && lenguage != 2 && lenguage!=3) {
 						
@@ -451,6 +439,28 @@ public class Main {
 			
 	}
      
+	private void buymenu_6() {
+		
+		descu.manche();
+		descu.maining();
+		@SuppressWarnings({ "resource"})
+		
+		Scanner tw = new Scanner(System.in);
+		String cod = "";
+		System.out.println("Introduce the coupon code.");
+		cod = tw.nextLine();
+		
+		if(cod.equals(descu.getCodigo())) {
+			coupon = true;
+			System.out.println("You have a coupon code of "+descu.getDescuento()+" €.");
+		}else {
+			
+			System.out.println("Invalid code.");
+			System.out.println("");
+		}
+		
+	}
+	
 	@SuppressWarnings("resource")
 	private void file() {
 			
@@ -514,7 +524,7 @@ public class Main {
 					f2.write(space);
 					f2.write("Product Name :" + list1Product.get(i).NameProduct);
 					f2.write(space);
-					f2.write("Price :" + list1Product.get(i).price+"Â€");
+					f2.write("Price :" + list1Product.get(i).price+"€");
 					f2.write(jump);
 					
 				
@@ -522,14 +532,25 @@ public class Main {
 	
 					}
 				}
-				tpriceiva = (float) (tprice * 0.21);
-				float jony = tpriceiva + tprice;
+				
 				f2.write(jump);
 				f2.write(jump);
-				f2.write("Total Price : " + (int) tprice+"Â€");
-				f2.write(jump);
-				f2.write("Total Price + IVA : " + jony+"Â€");
-				f2.write(jump);
+				
+				if(coupon) {
+					
+					tprice = tprice -  descu.getDescuento();
+					f2.write("Coupon applied.");
+					f2.write(jump);
+				}
+					
+					tpriceiva = (float) (tprice * 0.21);
+					float jony = tpriceiva + tprice;
+					f2.write("Total Price : " + (int) tprice+"€");
+					f2.write(jump);
+					f2.write("Total Price + IVA : " + jony+"€");
+					f2.write(jump);
+						
+				
 				f2.write("IVA = 21%");
 				f2.close();
 	
@@ -649,7 +670,7 @@ public class Main {
 				
 					}else {
 				
-								System.out.println("You canÂ´t buy 0 products.");
+								System.out.println("You can´t buy 0 products.");
 					}
 					
 			}else {
@@ -677,7 +698,7 @@ public class Main {
 						   
 						    System.out.println(i+1 + "Product :");
 						    System.out.println("Number of Products : "+list1Product.get(i).getCantidadcomprados());
-						   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"Â€");
+						   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
 						   	buy_controller = true;
 						   		
 					   }
@@ -751,47 +772,49 @@ public class Main {
 			System.out.println("");
 			System.out.println("");
 			
-			try {
 				for (int i = 0; i <= list1Product.size() - 1; i++) {
+	
+						if(list1Product.get(i).compra) {
+							
+					compri = true;
+					System.out.println(i+1 + ".Product :"); 
+				    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
+				   	System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
+				   
+				   	total_price = total_price + list1Product.get(i).price * list1Product.get(i).getCantidadcomprados();
+				   		
+			           }
+				 }
 					
-					if(list1Product.get(i).compra) {
-						
-				compri = true;
-				System.out.println(i+1 + ".Product :"); 
-			    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
-			   	System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"Â€");
-			   
-			   	total_price = total_price + list1Product.get(i).price * list1Product.get(i).getCantidadcomprados();
-			   		
-		           }
-			 }
+				if(compri) {
+					
+					if(coupon) {
+						System.out.println("");
+						total_price = total_price - descu.getDescuento();
+						System.out.println("Coupon applied.");
+					}
 				
-			if(compri) {
-			
-				System.out.println("");
-				System.out.println("The total price is : " + total_price+"Â€");
-				System.out.println("");
-			}else {
-				
-				System.out.println("You didnÂ´t buy anything yet.");
-				System.out.println("");
-			}
-			}catch(Exception e) {
-				System.out.println("fail option");
-
-			}
+					System.out.println("");
+					System.out.println("The total price is : " + total_price+"€");
+					System.out.println("");
+				}else {
+					
+					System.out.println("You didn´t buy anything yet.");
+					System.out.println("");
+				}
 				
 	}
 	
 	@SuppressWarnings({"resource"})
 	public static void main(String[] args) {
+		
+			
 	
 			try(FileReader reader =  new FileReader("config")) {
 				
 		       Properties properties = new Properties();
 		       properties.load(reader);
 		        
-		       
 		       String email = properties.getProperty("email");
 		       String username = properties.getProperty("username");
 		       String password = properties.getProperty("password");
@@ -858,8 +881,8 @@ public class Main {
 				
 			while(origin!=4){
 				
-			HellowWorldi18n.translate();
-				
+			HellowWorldi18n.translate();			
+
 			System.out.println(HellowWorldi18n.getSring1());
 			System.out.println("1." + HellowWorldi18n.getSring2());
 			System.out.println("2." + HellowWorldi18n.getSring3());
@@ -876,11 +899,8 @@ public class Main {
 				System.out.println("");
 				
 				Scanner df = new Scanner(System.in);
-	
 				int menu2 = 0;
-				
-				
-				
+
 				while(menu2 !=5) {
 				
 				System.out.println("1. Account");
@@ -913,14 +933,15 @@ public class Main {
 					Scanner buy = new Scanner(System.in);
 					int buymenu = 0;
 					
-					while(buymenu != 6) {
+					while(buymenu != 7) {
 						
 						System.out.println("1. Buy a product.");
 						System.out.println("2. Don't buy a product.");
 						System.out.println("3. Cart info.");
 						System.out.println("4. Print ticket.");
 						System.out.println("5. Change product price to dollars.");
-						System.out.println("6. Exit.");
+						System.out.println("6. Introduce a coupon code.");
+						System.out.println("7. Exit.");
 						System.out.println("Introduce the number of the option.");
 						buymenu = buy.nextInt();
 						
@@ -963,7 +984,15 @@ public class Main {
 							System.out.println("The price in dollars is : "+ Product.dolar(list1Product.get(menu2dollar).price) );
 							System.out.println("");
 	
-						}							
+						}	
+						
+						if(buymenu == 6) {
+							
+							pract. buymenu_6();
+							
+						}
+						
+						
 						}		
 					}
 				}
@@ -995,23 +1024,16 @@ public class Main {
 			}
 			
 			if(origin == 3) {
-				int ex = 0;
+				String ex = "";
 				Scanner yf = new Scanner(System.in);
 				System.out.println("Are you sure that you want to go out of Amabro? ");
 				System.out.println("1 = Yes");
 				System.out.println("Else = No");
-				ex = yf.nextInt();
-				if(ex == 1) {
+				ex = yf.nextLine();
+				if(ex.equals("1")){
 					
 					origin = 4;
-					
 				}
-			}
-			
-			else{	
-				
-				
-		
 			}
 			
 			}}catch (Exception e) {

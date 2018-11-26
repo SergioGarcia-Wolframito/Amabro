@@ -19,9 +19,9 @@ class ProductDolarTest {
 		double prueba2 = 6 *1.15;
 		assertEquals(Product.dolar(6), prueba2);
 		
+		
+		
 
 	}
-
-	
 
 }
