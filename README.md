@@ -53,16 +53,22 @@ If you choose the User option, it will ask you to enter a "UserName",an "Email" 
 Once you are inside the user menu you can see that there are 5 esentials options:
 
 
-![](Amabro%20Screenshots/UserMenu.PNG)
+![](Amabro%20Screenshots/INTERNACIONALIZACION_MENU.PNG)
 
 
 - 1. Account: 
+-1.1
 
 ![](Amabro%20Screenshots/UserAccount.PNG)
 
 
 Where the user can edit his "UserName", his "Email" and his "Password", and at the same time you will have the option to see your user data, except the password, for security measures.
 
+-1.2
+
+Also, you can change the lenguage of Amabro, but Amabro is only transated in Spanis, English and French, and a little part of Amabro.
+
+![](Amabro%20Screenshots/INTERNACIONALIZACION_2.PNG)
 - 2. Products:
 
 ![](Amabro%20Screenshots/UserProduct1.PNG)
