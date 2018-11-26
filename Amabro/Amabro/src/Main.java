@@ -27,7 +27,7 @@ public class Main {
 	private void Admin_menu1() {
 		
 
-		
+
 		Scanner ef = new Scanner(System.in);
 		int product_menu2 = 0;
 		while(product_menu2 !=4) {
@@ -407,6 +407,7 @@ public class Main {
 					System.out.println("1. English");
 					System.out.println("2. Español");
 					System.out.println("3. Francais");
+					System.out.println("4. catalan");
 					lenguage = len.nextInt();
 					
 					if(lenguage == 1) {
@@ -427,6 +428,10 @@ public class Main {
 						HellowWorldi18n.setLanguage("fr");
 						
 					}
+                   if(lenguage == 4) {
+						
+						HellowWorldi18n.setCountry("AR");
+						HellowWorldi18n.setLanguage("ar");
 					
 					if(lenguage !=1 && lenguage != 2 && lenguage!=3) {
 						
@@ -743,30 +748,36 @@ public class Main {
 			System.out.println("");
 			System.out.println("");
 			
+			try {
 				for (int i = 0; i <= list1Product.size() - 1; i++) {
-	
-						if(list1Product.get(i).compra) {
-							
-					compri = true;
-					System.out.println(i+1 + ".Product :"); 
-				    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
-				   	System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
-				   
-				   	total_price = total_price + list1Product.get(i).price * list1Product.get(i).getCantidadcomprados();
-				   		
-			           }
-				 }
 					
-				if(compri) {
+					if(list1Product.get(i).compra) {
+						
+				compri = true;
+				System.out.println(i+1 + ".Product :"); 
+			    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
+			   	System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
+			   
+			   	total_price = total_price + list1Product.get(i).price * list1Product.get(i).getCantidadcomprados();
+			   		
+		           }
+			 }
 				
-					System.out.println("");
-					System.out.println("The total price is : " + total_price+"€");
-					System.out.println("");
-				}else {
-					
-					System.out.println("You didn´t buy anything yet.");
-					System.out.println("");
-				}
+			if(compri) {
+			
+				System.out.println("");
+				System.out.println("The total price is : " + total_price+"€");
+				System.out.println("");
+			}else {
+				
+				System.out.println("You didn´t buy anything yet.");
+				System.out.println("");
+			}
+			}catch(Exception e) {
+				System.out.println("fail option");
+
+			}
+				
 	}
 	
 	@SuppressWarnings({"resource"})
