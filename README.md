@@ -12,13 +12,13 @@ Amabro, is the name of my project.
 
 ## INTRODUCTION : 
 
-It consists in a kind of online store quite simple, in which first, you have two options, enter as User or Administrator.
+It's based in some kind of online store quite simple, first, you have two options, login as User or Administrator.
 
 ![](Amabro%20Screenshots/Menu.PNG)
 
 ## ADMINISTRATOR
 
-When you choose the Administrator option, it will ask us to enter an UserName, Email and Password, which will be detailed in the "config" file, if you do not enter the same data, Amabro closes automatically.
+If you choose the Administrator option, it will ask us to enter an UserName, Email and Password, which will be detailed in the "config" file, if the data arent equal, Amabro closes automatically.
 
 
 
@@ -46,11 +46,11 @@ Products and Categories are two independent lists, and you can add, delete and r
 
 ## USER
 
-When you choose the User option, it will ask you to enter a UserName, Email and Password and as a security measure, Amabro will ask you for the password again, and until the two do not match, the user will not have access to it.
+If you choose the User option, it will ask you to enter a "UserName",an "Email" and "Password", and as a security measure, Amabro will ask you for the password again, and until both of them do not match, the user will not have access to it.
 
 ![](Amabro%20Screenshots/User1.PNG)
 
-Once you are inside the user menu you can see that there are 5 useful options:
+Once you are inside the user menu you can see that there are 5 esentials options:
 
 
 ![](Amabro%20Screenshots/UserMenu.PNG)
@@ -61,13 +61,13 @@ Once you are inside the user menu you can see that there are 5 useful options:
 ![](Amabro%20Screenshots/UserAccount.PNG)
 
 
-Where the user can edit his UserName, his Email and his Password, and at the same time you will have the option to see your user data, except the password, for security measures.
+Where the user can edit his "UserName", his "Email" and his "Password", and at the same time you will have the option to see your user data, except the password, for security measures.
 
 - 2. Products:
 
 ![](Amabro%20Screenshots/UserProduct1.PNG)
 
-Where the user can see the Categories of Amabro and introduce the number of the Categorie to see the Products that are inside.
+Where the user can see the Categories of Amabro and introduce the number of the Categories to see the Products that are inside.
 
 ![](Amabro%20Screenshots/UserProduct2.PNG)
 
@@ -75,7 +75,7 @@ Where the user can see the Categories of Amabro and introduce the number of the 
 
 ![](Amabro%20Screenshots/UserProduct1.PNG)
 
-Where the user can see the Categories of Amabro.
+Where the user can see the Categories that are active on Amabro.
 
 - 4. Change Product price to Dollars : 
 

@@ -38,7 +38,8 @@ public class Main {
     		System.out.println("3. Delete a product");
     		System.out.println("4. Exit");
     		product_menu2 = ef.nextInt();
-    		
+			
+    		//Allow the search of all products available on Amabro
     		if(product_menu2 == 1) {
     			
     			System.out.println("");
@@ -67,6 +68,7 @@ public class Main {
     				
     		}
     		
+		//Allow user to add a product on product list
         	if(product_menu2 == 2) {
 
         		Scanner fb = new Scanner(System.in);	
@@ -113,6 +115,7 @@ public class Main {
     			
         	}
     		
+		//Allow user delete a product from general store
         	if(product_menu2 == 3) {
         			
         			       			 
@@ -329,7 +332,7 @@ public class Main {
 				System.out.println("1. Account settings. ");
 				System.out.println("2. Account info.");
 				System.out.println("3. Change lenguage.");
-				System.out.println("Introduce the number 4 to go back. ");
+				System.out.println("Press 4 to go back. ");
 				number_menu = nm.nextInt();
 	
 			switch(number_menu) {
@@ -344,7 +347,7 @@ public class Main {
 				System.out.println("1. Change user name.");
 				System.out.println("2. Change email.");
 				System.out.println("3. Change password.");
-				System.out.println("Introduce any other key to go back. ");
+				System.out.println("Press any other key to go back. ");
 				settings = nj.nextInt();
 				
 					switch(settings) {
@@ -405,9 +408,9 @@ public class Main {
 					Scanner len = new Scanner(System.in);
 					System.out.println("Select a lenguage");
 					System.out.println("1. English");
-					System.out.println("2. Español");
-					System.out.println("3. Francais");
-					System.out.println("4. catalan");
+					System.out.println("2. EspaÃ±ol");
+					System.out.println("3. FranÃ§ais");
+					System.out.println("4. Catalan");
 					lenguage = len.nextInt();
 					
 					if(lenguage == 1) {
@@ -511,7 +514,7 @@ public class Main {
 					f2.write(space);
 					f2.write("Product Name :" + list1Product.get(i).NameProduct);
 					f2.write(space);
-					f2.write("Price :" + list1Product.get(i).price+"€");
+					f2.write("Price :" + list1Product.get(i).price+"Â€");
 					f2.write(jump);
 					
 				
@@ -523,9 +526,9 @@ public class Main {
 				float jony = tpriceiva + tprice;
 				f2.write(jump);
 				f2.write(jump);
-				f2.write("Total Price : " + (int) tprice+"€");
+				f2.write("Total Price : " + (int) tprice+"Â€");
 				f2.write(jump);
-				f2.write("Total Price + IVA : " + jony+"€");
+				f2.write("Total Price + IVA : " + jony+"Â€");
 				f2.write(jump);
 				f2.write("IVA = 21%");
 				f2.close();
@@ -646,7 +649,7 @@ public class Main {
 				
 					}else {
 				
-								System.out.println("You can´t buy 0 products.");
+								System.out.println("You canÂ´t buy 0 products.");
 					}
 					
 			}else {
@@ -674,7 +677,7 @@ public class Main {
 						   
 						    System.out.println(i+1 + "Product :");
 						    System.out.println("Number of Products : "+list1Product.get(i).getCantidadcomprados());
-						   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
+						   		System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"Â€");
 						   	buy_controller = true;
 						   		
 					   }
@@ -756,7 +759,7 @@ public class Main {
 				compri = true;
 				System.out.println(i+1 + ".Product :"); 
 			    System.out.println("Number of Products : " + list1Product.get(i).getCantidadcomprados());
-			   	System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"€");
+			   	System.out.println("//Product Name:  " + list1Product.get(i).NameProduct + "//Product Price :"+list1Product.get(i).price+"Â€");
 			   
 			   	total_price = total_price + list1Product.get(i).price * list1Product.get(i).getCantidadcomprados();
 			   		
@@ -766,11 +769,11 @@ public class Main {
 			if(compri) {
 			
 				System.out.println("");
-				System.out.println("The total price is : " + total_price+"€");
+				System.out.println("The total price is : " + total_price+"Â€");
 				System.out.println("");
 			}else {
 				
-				System.out.println("You didn´t buy anything yet.");
+				System.out.println("You didnÂ´t buy anything yet.");
 				System.out.println("");
 			}
 			}catch(Exception e) {
