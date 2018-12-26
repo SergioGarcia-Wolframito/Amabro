@@ -1,6 +1,7 @@
 # Amabro
 Amabro, is the name of my project.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2cdcac93880941f7a6f6ae9c6a267edd)](https://app.codacy.com/app/SergioGarcia-Wolframito/Amabro?utm_source=github.com&utm_medium=referral&utm_content=SergioGarcia-Wolframito/Amabro&utm_campaign=Badge_Grade_Dashboard)
 [![BCH compliance](https://bettercodehub.com/edge/badge/SergioGarcia-Wolframito/practica_1?branch=master)](https://bettercodehub.com/)
 
 
