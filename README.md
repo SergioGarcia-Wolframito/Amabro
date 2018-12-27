@@ -106,7 +106,7 @@ Where you can buy a product and chose the amount.
 
 Where at first you can see the products that you have bought, and if you want to delete a product or an amount of products yo have to introduce first 1, for security.
 
-- Change Product price to Dollars : 
+-Change Product price to Dollars : 
 
 ![](Amabro%20Screenshots/Dollars.PNG)
 
