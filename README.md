@@ -53,11 +53,14 @@ If you choose the User option, it will ask you to enter a "UserName",an "Email" 
 Once you are inside the user menu you can see that there are 5 esentials options:
 
 
-![](Amabro%20Screenshots/INTERNACIONALIZACION_MENU.PNG)
-
+![](Amabro%20Screenshots/UserMenu.PNG)
 
 - 1. Account: 
+
+![](Amabro%20Screenshots/INTERNACIONALIZACION_MENU.PNG)
+
 -1.1
+![](Amabro%20Screenshots/User1.PNG)
 
 ![](Amabro%20Screenshots/UserAccount.PNG)
 
