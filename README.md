@@ -86,14 +86,8 @@ Where the user can see the Categories of Amabro and introduce the number of the 
 
 Where the user can see the Categories that are active on Amabro.
 
-- 4. Change Product price to Dollars : 
 
-![](Amabro%20Screenshots/Dollars.PNG)
-
-Where introducing the number of a Product it will show you the price in Dollars.
-
-
-- 5. Buy Menu :
+- 4. Buy Menu :
 
 ![](Amabro%20Screenshots/BuyMenu.PNG)
 
@@ -111,6 +105,13 @@ Where you can buy a product and chose the amount.
 
 Where at first you can see the products that you have bought, and if you want to delete a product or an amount of products yo have to introduce first 1, for security.
 
+- Change Product price to Dollars : 
+
+![](Amabro%20Screenshots/Dollars.PNG)
+
+Where introducing the number of a Product it will show you the price in Dollars.
+
+
 -Cart Info:
 
 ![](Amabro%20Screenshots/BuyMenu3.PNG)
@@ -127,9 +128,15 @@ Amabro will create a .txt file, in the desktop that is the current Path or in ot
 
 ![](Amabro%20Screenshots/BuyMenu6.PNG)
 
+-Introduce a coupon code:
 
+![](Amabro%20Screenshots/Coupon.PNG)
 
-This is a simple explanation of what Amabro does, it is a project that has a lot to improve and a lot to offer.
-Thank you for read it.
+- 5. Order Products :
+
+![](Amabro%20Screenshots/Order.PNG)
+
+Here you see the list of all the products in orden according to the price of each.
+
 
 
