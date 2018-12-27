@@ -7,7 +7,7 @@ Amabro, is the name of my project.
 
 
 
-//(https://travis-ci.com/SergioGarcia-Wolframito/Practica1)
+
 
 ## INTRODUCTION : 
 
